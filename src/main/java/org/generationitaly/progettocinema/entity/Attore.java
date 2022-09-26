@@ -40,10 +40,10 @@ public class Attore {
 	
 	@Column(name = "foto_attore", length = 2000, nullable = false)
 	private String foto;
-	
+
 	@OneToMany(mappedBy = "attore")
 	private List<FilmAttori> filmografia;
-
+	
 	public int getId() {
 		return id;
 	}
