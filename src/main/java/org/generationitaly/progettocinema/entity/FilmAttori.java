@@ -25,5 +25,29 @@ public class FilmAttori {
 	@ManyToOne
 	@JoinColumn(name = "attore_id", nullable = false)
 	private Attore attore;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Film getFilm() {
+		return film;
+	}
+
+	public void setFilm(Film film) {
+		this.film = film;
+	}
+
+	public Attore getAttore() {
+		return attore;
+	}
+
+	public void setAttore(Attore attore) {
+		this.attore = attore;
+	}
 	
 }
