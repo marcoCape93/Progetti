@@ -31,16 +31,5 @@ public class Utente {
 	@Column(name = "password", length = 12, nullable = false)
 	private String password;
 	
-	/*
-	 * CREATE TABLE utente (
-	id INT PRIMARY KEY AUTO_INCREMENT, 
-    nome VARCHAR(50) NOT NULL,
-    cognome VARCHAR(50) NOT NULL, 
-    username VARCHAR(50) UNIQUE NOT NULL,
-    email VARCHAR(50) UNIQUE NOT NULL, 
-    password VARCHAR(12) NOT NULL
-);
-	 * 
-	 * */
 	
 }
