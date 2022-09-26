@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>indexServlet</servlet-name>
+  	<display-name>indexServlet</display-name>
+  	<description></description>
+  	<servlet-class>org.generationitaly.progettocinema.controller.indexServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>indexServlet</servlet-name>
+  	<url-pattern>/indexServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
