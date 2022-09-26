@@ -44,11 +44,44 @@ public class Film {
 	
 	@Column(name = "descrizione", length = 2000, nullable = false)
 	private String descrizione;
-
+	
+	@Column(name = "locandina", length = 2000, nullable = false)
+	private String locandina;
+	
+	@Column(name = "voto")
+	private int voto;
+	
 	@OneToMany(mappedBy = "film")
 	private List<FilmAttori> cast;
 	
-	
+	public String getLocandina() {
+		return locandina;
+	}
+
+	public void setLocandina(String locandina) {
+		this.locandina = locandina;
+	}
+
+	public int getVoto() {
+		return voto;
+	}
+
+	public void setVoto(int voto) {
+		this.voto = voto;
+	}
+
+	public List<FilmAttori> getCast() {
+		return cast;
+	}
+
+	public void setCast(List<FilmAttori> cast) {
+		this.cast = cast;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -116,6 +149,17 @@ public class Film {
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
+
+	@Override
+	public String toString() {
+		return "Film [id=" + id + ", titolo=" + titolo + ", anno=" + anno + ", paese=" + paese + ", genere=" + genere
+				+ ", regista=" + regista + ", distribuzione=" + distribuzione + ", durata=" + durata + ", descrizione="
+				+ descrizione + ", locandina=" + locandina + ", voto=" + voto;
+	}
+
+	
+	
+	
 	
 }
 

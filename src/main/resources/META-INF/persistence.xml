@@ -8,7 +8,10 @@
 		<!-- Persistence provider -->
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<!-- Entity classes -->
-		
+		<class>org.generationitaly.progettocinema.entity.Film</class>
+		<class>org.generationitaly.progettocinema.entity.Attore</class>
+		<class>org.generationitaly.progettocinema.entity.FilmAttori</class>
+		<class>org.generationitaly.progettocinema.entity.Utente</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.cj.jdbc.Driver" />
