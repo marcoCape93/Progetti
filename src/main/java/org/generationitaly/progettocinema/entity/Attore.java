@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -42,10 +41,66 @@ public class Attore {
 	@Column(name = "foto_attore", length = 2000, nullable = false)
 	private String foto;
 	
-//	@OneToMany(mappedBy = "attore")
-//	private List<Film> filmografia;
-	
-	@ManyToMany(targetEntity = Film.class)
-	private List<Film> filmografia;
+	@OneToMany(mappedBy = "attore")
+	private List<FilmAttori> filmografia;
+
+	public int getId() {
+		return id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCognome() {
+		return cognome;
+	}
+
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
+	}
+
+	public Date getDataNascita() {
+		return dataNascita;
+	}
+
+	public void setDataNascita(Date dataNascita) {
+		this.dataNascita = dataNascita;
+	}
+
+	public String getLuogoNascita() {
+		return luogoNascita;
+	}
+
+	public void setLuogoNascita(String luogoNascita) {
+		this.luogoNascita = luogoNascita;
+	}
+
+	public String getBiografia() {
+		return biografia;
+	}
+
+	public void setBiografia(String biografia) {
+		this.biografia = biografia;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	@Override
+	public String toString() {
+		return "Attore [id=" + id + ", nome=" + nome + ", cognome=" + cognome + ", dataNascita=" + dataNascita
+				+ ", luogoNascita=" + luogoNascita + ", biografia=" + biografia + ", foto=" + foto + ", filmografia="
+				+ filmografia + "]";
+	}
 	
 }
