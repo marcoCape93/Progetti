@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -41,8 +42,10 @@ public class Attore {
 	@Column(name = "foto_attore", length = 2000, nullable = false)
 	private String foto;
 	
-	@OneToMany(mappedBy = "attore")
-	private List<Film> filmografia;
+//	@OneToMany(mappedBy = "attore")
+//	private List<Film> filmografia;
 	
+	@ManyToMany(targetEntity = Film.class)
+	private List<Film> filmografia;
 	
 }

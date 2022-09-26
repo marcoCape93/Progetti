@@ -8,6 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -44,9 +45,11 @@ public class Film {
 	@Column(name = "descrizione", length = 2000, nullable = false)
 	private String descrizione;
 
-	@OneToMany(mappedBy = "film")
-	private List<Attore> cast;
+//	@OneToMany(mappedBy = "film")
+//	private List<Attore> cast;
 	
+	@ManyToMany(targetEntity = Attore.class)
+	private List<Attore> cast;
 	
 	public int getId() {
 		return id;
