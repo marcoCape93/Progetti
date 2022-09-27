@@ -10,5 +10,8 @@ public interface AttoreService {
 	
 	Attore findById(int id);
 	
-
+	List<Attore> orderAZ();
+	
+	List<Attore> orderZA();
+	
 }
