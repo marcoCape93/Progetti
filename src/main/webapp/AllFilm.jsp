@@ -8,6 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<form action="AnnoFilmServlet" method="get">
+		<label for="anno">Anno</label>
+		<input type="text" name="anno" required>
+		<button type="submit">Cerca</button>
+	</form>
 	<table>
 		<thead>
 			<tr>
