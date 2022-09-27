@@ -10,10 +10,10 @@ public interface FilmRepository extends CrudRepository<Film, Integer>{
 
 	List<Film> findByGenere(String genere);
 
-	List<Film> findAllGenere();
-
-	List<Film> findAllAnno();
+	List<String> findAllGenere();
 
 	List<Film> findByTitolo(String titolo);
-	
+
+	List<Integer> findAllAnno();
+
 }

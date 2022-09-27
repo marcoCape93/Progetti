@@ -14,7 +14,9 @@ public interface FilmService {
 	
 	List<Film> findByGenere(String genere);
 
-	List<Film> findAllAnno();
+	List<Integer> findAllAnno();
 
-	List<Film> findAllGenere();
+	List<String> findAllGenere();
+
+	List<Film> findByTitolo(String titolo);
 }

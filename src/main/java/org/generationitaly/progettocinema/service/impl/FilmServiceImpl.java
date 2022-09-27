@@ -45,7 +45,22 @@ public class FilmServiceImpl implements FilmService{
 		}
 		return film;
 	}
-
+	
+	@Override
+	public List<Film> findByTitolo(String titolo) {
+		List<Film> film = null;
+		try {
+			PersistenceUtil.beginTransaction();
+			film = filmRepository.findByTitolo(titolo);
+			PersistenceUtil.commitTransaction();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			PersistenceUtil.rollbackTransaction();
+		} finally {
+			PersistenceUtil.closeEntityManager();
+		}
+		return film;
+	}
 
 	@Override
 	public List<Film> findByAnno(int anno) {
@@ -80,8 +95,8 @@ public class FilmServiceImpl implements FilmService{
 		return film;
 	}
 	@Override
-	public List<Film> findAllGenere() {
-		List<Film> film = null;
+	public List<String> findAllGenere() {
+		List<String> film = null;
 		try {
 			PersistenceUtil.beginTransaction();
 			film = filmRepository.findAllGenere();
@@ -95,11 +110,11 @@ public class FilmServiceImpl implements FilmService{
 		return film;
 	}
 	@Override
-	public List<Film> findAllAnno() {
-		List<Film> film = null;
+	public List<Integer> findAllAnno() {
+		List<Integer> anno = null;
 		try {
 			PersistenceUtil.beginTransaction();
-			film = filmRepository.findAllAnno();
+			anno = filmRepository.findAllAnno();
 			PersistenceUtil.commitTransaction();
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
@@ -107,7 +122,8 @@ public class FilmServiceImpl implements FilmService{
 		} finally {
 			PersistenceUtil.closeEntityManager();
 		}
-		return film;
+		return anno;
 	}
+	
 	
 }

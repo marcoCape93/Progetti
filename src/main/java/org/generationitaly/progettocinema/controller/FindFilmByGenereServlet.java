@@ -26,8 +26,8 @@ public class FindFilmByGenereServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String genere = request.getParameter("genere");
-		List<Film> generi = filmRepository.findAllGenere();
-		List<Film> anni = filmRepository.findAllAnno();
+		List<String> generi = filmRepository.findAllGenere();
+		List<Integer> anni = filmRepository.findAllAnno();
 		List<Film> film = filmRepository.findByGenere(genere);
 		
 		request.setAttribute("generi", generi);
