@@ -1,5 +1,6 @@
 package org.generationitaly.progettocinema.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.generationitaly.progettocinema.entity.Film;
@@ -44,6 +45,29 @@ public class FilmServiceImpl implements FilmService{
 			PersistenceUtil.closeEntityManager();
 		}
 		return film;
+	}
+
+
+	@Override
+	public List<Film> findByAnno(int anno) {
+		List<Film> film = null;
+		List<Film> tmp = new ArrayList<Film>();
+		try {
+			PersistenceUtil.beginTransaction();
+			film = filmRepository.findAll();
+			for(Film m:film) {
+				if(m.getAnno()==anno) {
+					tmp.add(m);
+				}
+			}
+			PersistenceUtil.commitTransaction();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			PersistenceUtil.rollbackTransaction();
+		} finally {
+			PersistenceUtil.closeEntityManager();
+		}
+		return tmp;
 	}
 	
 }

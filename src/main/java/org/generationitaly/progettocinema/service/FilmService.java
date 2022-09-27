@@ -10,4 +10,5 @@ public interface FilmService {
 	
 	Film findById(int id);
 	
+	List<Film> findByAnno(int anno);
 }
