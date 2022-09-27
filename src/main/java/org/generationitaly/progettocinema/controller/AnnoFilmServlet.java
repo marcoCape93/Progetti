@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.generationitaly.progettocinema.entity.Film;
-import org.generationitaly.progettocinema.service.FilmService;
-import org.generationitaly.progettocinema.service.impl.FilmServiceImpl;
+import org.generationitaly.progettocinema.repository.FilmRepository;
+import org.generationitaly.progettocinema.repository.impl.FilmRepositoryImpl;
 
 /**
  * Servlet implementation class AnnoFilmServlet
@@ -20,14 +20,16 @@ import org.generationitaly.progettocinema.service.impl.FilmServiceImpl;
 public class AnnoFilmServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
-	private FilmService filmService = new FilmServiceImpl();
+	private FilmRepository filmRepository = new FilmRepositoryImpl();
 	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int anno = Integer.parseInt(request.getParameter("anno"));
-		List<Film> film = filmService.findByAnno(anno);
+		List<Film> anni = filmRepository.findAllAnno();
+		List<Film> film = filmRepository.findByAnno(anno);
+		request.setAttribute("anni", anni);
 		request.setAttribute("film", film);
 		request.getRequestDispatcher("AllFilm.jsp").forward(request, response);
 	}

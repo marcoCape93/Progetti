@@ -11,4 +11,10 @@ public interface FilmService {
 	Film findById(int id);
 	
 	List<Film> findByAnno(int anno);
+	
+	List<Film> findByGenere(String genere);
+
+	List<Film> findAllAnno();
+
+	List<Film> findAllGenere();
 }

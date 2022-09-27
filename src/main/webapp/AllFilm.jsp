@@ -10,7 +10,20 @@
 <body>
 	<form action="AnnoFilmServlet" method="get">
 		<label for="anno">Anno</label>
-		<input type="text" name="anno" required>
+			<select name="anno">
+			<c:forEach items="${anni}" var="f">
+				<option value="${f.anno}">${f.anno}</option>
+			</c:forEach>
+			</select>
+		<button type="submit">Cerca</button>
+	</form>
+	<form action="find-by-genere" method="get">
+		<label for="genere">Genere</label>
+			<select name="genere">
+			<c:forEach items="${generi}" var="f">
+				<option value="${f.genere}">${f.genere}</option>
+			</c:forEach>
+			</select>
 		<button type="submit">Cerca</button>
 	</form>
 	<table>

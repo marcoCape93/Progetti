@@ -13,31 +13,27 @@ import org.generationitaly.progettocinema.entity.Film;
 import org.generationitaly.progettocinema.repository.FilmRepository;
 import org.generationitaly.progettocinema.repository.impl.FilmRepositoryImpl;
 
-/**
- * Servlet implementation class FindAllServlet
- */
-@WebServlet("/tuttiFilm")
-public class FindAllServlet extends HttpServlet {
+@WebServlet("/find-by-genere")
+public class FindFilmByGenereServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
+
 	private FilmRepository filmRepository = new FilmRepositoryImpl();
-	
+
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Film> film = filmRepository.findAll();
-		List<Film> anni = filmRepository.findAllAnno();
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String genere = request.getParameter("genere");
 		List<Film> generi = filmRepository.findAllGenere();
-		request.setAttribute("film", film);
-		request.setAttribute("generi", generi);
-		request.setAttribute("anni", anni);
+		List<Film> film = filmRepository.findByGenere(genere);
 //		for(Film m:film) {
 //			System.out.println(m);
 //		}
+		request.setAttribute("generi", generi);
+		request.setAttribute("film", film);
 		request.getRequestDispatcher("AllFilm.jsp").forward(request, response);
-	}
-
-
+	}	
 
 }

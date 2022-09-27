@@ -1,6 +1,5 @@
 package org.generationitaly.progettocinema.service.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.generationitaly.progettocinema.entity.Film;
@@ -51,15 +50,9 @@ public class FilmServiceImpl implements FilmService{
 	@Override
 	public List<Film> findByAnno(int anno) {
 		List<Film> film = null;
-		List<Film> tmp = new ArrayList<Film>();
 		try {
 			PersistenceUtil.beginTransaction();
-			film = filmRepository.findAll();
-			for(Film m:film) {
-				if(m.getAnno()==anno) {
-					tmp.add(m);
-				}
-			}
+			film = filmRepository.findByAnno(anno);
 			PersistenceUtil.commitTransaction();
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
@@ -67,7 +60,54 @@ public class FilmServiceImpl implements FilmService{
 		} finally {
 			PersistenceUtil.closeEntityManager();
 		}
-		return tmp;
+		return film;
+	}
+
+
+	@Override
+	public List<Film> findByGenere(String genere) {
+		List<Film> film = null;
+		try {
+			PersistenceUtil.beginTransaction();
+			film = filmRepository.findByGenere(genere);
+			PersistenceUtil.commitTransaction();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			PersistenceUtil.rollbackTransaction();
+		} finally {
+			PersistenceUtil.closeEntityManager();
+		}
+		return film;
+	}
+	@Override
+	public List<Film> findAllGenere() {
+		List<Film> film = null;
+		try {
+			PersistenceUtil.beginTransaction();
+			film = filmRepository.findAllGenere();
+			PersistenceUtil.commitTransaction();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			PersistenceUtil.rollbackTransaction();
+		} finally {
+			PersistenceUtil.closeEntityManager();
+		}
+		return film;
+	}
+	@Override
+	public List<Film> findAllAnno() {
+		List<Film> film = null;
+		try {
+			PersistenceUtil.beginTransaction();
+			film = filmRepository.findAllAnno();
+			PersistenceUtil.commitTransaction();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			PersistenceUtil.rollbackTransaction();
+		} finally {
+			PersistenceUtil.closeEntityManager();
+		}
+		return film;
 	}
 	
 }
