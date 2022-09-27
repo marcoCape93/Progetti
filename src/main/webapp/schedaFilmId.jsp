@@ -84,7 +84,7 @@
 								<c:out value="${a.attore.biografia}"></c:out>
 							</td>
 							<td>
-								<c:out value="${a.attore.foto}"></c:out>
+								<img alt="" src="${a.attore.foto}">
 							</td>
 						</tr>
 					</c:forEach>
