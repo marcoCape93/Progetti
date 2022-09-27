@@ -125,5 +125,38 @@ public class FilmServiceImpl implements FilmService{
 		return anno;
 	}
 	
+
+	@Override
+	public List<Film> orderAZ() {
+		List<Film> film = null;
+		try {
+			PersistenceUtil.beginTransaction();
+			film = filmRepository.orderAZ();
+			PersistenceUtil.commitTransaction();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			PersistenceUtil.rollbackTransaction();
+		} finally {
+			PersistenceUtil.closeEntityManager();
+		}
+		return film;
+	}
+	
+	@Override
+	public List<Film> orderZA() {
+		List<Film> film = null;
+		try {
+			PersistenceUtil.beginTransaction();
+			film = filmRepository.orderZA();
+			PersistenceUtil.commitTransaction();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			PersistenceUtil.rollbackTransaction();
+		} finally {
+			PersistenceUtil.closeEntityManager();
+		}
+		return film;
+	}
+
 	
 }

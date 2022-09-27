@@ -18,5 +18,9 @@ public interface FilmService {
 
 	List<String> findAllGenere();
 
-	List<Film> findByTitolo(String titolo);
+	List<Film> findByTitolo(String titolo);	
+	
+	List<Film> orderAZ();
+	
+	List<Film> orderZA();
 }

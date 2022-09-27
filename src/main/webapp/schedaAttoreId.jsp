@@ -84,7 +84,7 @@
 								<c:out value="${f.film.voto}"></c:out>
 							</td>
 							<td>
-								<c:out value="${f.film.locandina}"></c:out>
+								<img src="${f.film.locandina}">
 							</td>
 						</tr>
 					</c:forEach>
