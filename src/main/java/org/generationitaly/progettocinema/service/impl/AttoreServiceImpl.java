@@ -46,4 +46,21 @@ public class AttoreServiceImpl implements AttoreService {
 		return attore;
 	}
 
+
+	@Override
+	public Attore findByCognome(String cognome) {
+		Attore attore = null;
+		try {
+			PersistenceUtil.beginTransaction();
+			attore = attoreRepository.findByCognome(cognome);
+			PersistenceUtil.commitTransaction();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			PersistenceUtil.rollbackTransaction();
+		} finally {
+			PersistenceUtil.closeEntityManager();
+		}
+		return attore;
+	}
+
 }
