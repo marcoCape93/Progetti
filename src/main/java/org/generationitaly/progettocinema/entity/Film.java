@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -51,7 +52,7 @@ public class Film {
 	@Column(name = "voto")
 	private int voto;
 	
-	@OneToMany(mappedBy = "film")
+	@OneToMany(mappedBy = "film", fetch = FetchType.EAGER)
 	private List<FilmAttori> cast;
 	
 	public String getLocandina() {
@@ -150,6 +151,8 @@ public class Film {
 		this.descrizione = descrizione;
 	}
 
+	
+	
 	@Override
 	public String toString() {
 		return "Film [id=" + id + ", titolo=" + titolo + ", anno=" + anno + ", paese=" + paese + ", genere=" + genere

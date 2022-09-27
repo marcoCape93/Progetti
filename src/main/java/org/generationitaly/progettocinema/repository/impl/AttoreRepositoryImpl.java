@@ -1,6 +1,8 @@
 package org.generationitaly.progettocinema.repository.impl;
 
+
 import java.util.List;
+
 
 import javax.persistence.EntityManager;
 
@@ -12,6 +14,13 @@ public class AttoreRepositoryImpl extends CrudRepositoryImpl<Attore,Integer> imp
 	
 	public AttoreRepositoryImpl() {
 		super(Attore.class);
+	}
+
+	@Override
+	public Attore findByCognome(String cognome) {
+		EntityManager em = PersistenceUtil.getEntityManager();
+		
+		return em.createQuery("select a from Attore a where a.cognome=:cognome", Attore.class).setParameter("cognome", cognome).getSingleResult();
 	}
 	
 	@Override
