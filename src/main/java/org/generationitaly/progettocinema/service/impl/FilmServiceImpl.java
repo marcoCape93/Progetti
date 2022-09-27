@@ -15,10 +15,10 @@ public class FilmServiceImpl implements FilmService{
 	
 	@Override
 	public List<Film> findAll() {
-		List<Film> proprietari = null;
+		List<Film> film = null;
 		try {
 			PersistenceUtil.beginTransaction();
-			proprietari = filmRepository.findAll();
+			film = filmRepository.findAll();
 			PersistenceUtil.commitTransaction();
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
@@ -26,7 +26,7 @@ public class FilmServiceImpl implements FilmService{
 		} finally {
 			PersistenceUtil.closeEntityManager();
 		}
-		return proprietari;
+		return film;
 	}
 
 
