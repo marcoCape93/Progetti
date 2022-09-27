@@ -15,11 +15,11 @@ public abstract class CrudRepositoryImpl<T,ID> implements CrudRepository<T, ID>{
 		this.entityClass = entityClass;
 	}
 
-//	@Override
-//	public void save(T entity) {
-//		EntityManager em = PersistenceUtil.getEntityManager();
-//		em.persist(entity);
-//	}
+	@Override
+	public void save(T entity) {
+		EntityManager em = PersistenceUtil.getEntityManager();
+		em.persist(entity);
+	}
 //
 //	@Override
 //	public void update(T entity) {
@@ -27,11 +27,11 @@ public abstract class CrudRepositoryImpl<T,ID> implements CrudRepository<T, ID>{
 //		em.persist(em.contains(entity) ? entity : em.merge(entity));
 //	}
 //
-//	@Override
-//	public void delete(T entity) {
-//		EntityManager em = PersistenceUtil.getEntityManager();
-//		em.remove(em.contains(entity) ? entity : em.merge(entity));
-//	}
+	@Override
+	public void delete(T entity) {
+		EntityManager em = PersistenceUtil.getEntityManager();
+		em.remove(em.contains(entity) ? entity : em.merge(entity));
+	}
 //
 	@Override
 	public T findById(ID id) {
