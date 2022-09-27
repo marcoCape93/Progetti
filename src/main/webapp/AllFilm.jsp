@@ -13,7 +13,7 @@
 			<select name="anno">
 			<option >Seleziona..</option>
 			<c:forEach items="${anni}" var="f">
-				<option value="${f.anno}">${f.anno}</option>
+				<option value="${f}">${f}</option>
 			</c:forEach>
 			</select>
 		<button type="submit">Cerca</button>
@@ -23,7 +23,7 @@
 			<select name="genere">
 			<option >Seleziona..</option>
 			<c:forEach items="${generi}" var="f">
-				<option value="${f.genere}">${f.genere}</option>
+				<option value="${f}">${f}</option>
 			</c:forEach>
 			</select>
 		<button type="submit">Cerca</button>

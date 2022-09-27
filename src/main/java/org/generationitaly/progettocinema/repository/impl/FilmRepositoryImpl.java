@@ -16,15 +16,15 @@ public class FilmRepositoryImpl extends CrudRepositoryImpl<Film,Integer> impleme
 	}
 	
 	@Override
-	public List<Film> findAllGenere() {
+	public List<String> findAllGenere() {
 		EntityManager em = PersistenceUtil.getEntityManager();
-		return em.createQuery("select a from Film a group by a.genere", Film.class).getResultList();
+		return em.createQuery("select distinct a.genere from Film a", String.class).getResultList();
 	}
 	
 	@Override
-	public List<Film> findAllAnno() {
+	public List<Integer> findAllAnno() {
 		EntityManager em = PersistenceUtil.getEntityManager();
-		return em.createQuery("select a from Film a group by a.anno order by a.anno desc", Film.class).getResultList();
+		return em.createQuery("select distinct a.anno from Film a order by a.anno desc", Integer.class).getResultList();
 	}
 
 	@Override

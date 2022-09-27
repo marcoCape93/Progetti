@@ -27,8 +27,8 @@ public class FindAllServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Film> film = filmRepository.findAll();
-		List<Film> anni = filmRepository.findAllAnno();
-		List<Film> generi = filmRepository.findAllGenere();
+		List<Integer> anni = filmRepository.findAllAnno();
+		List<String> generi = filmRepository.findAllGenere();
 		
 		request.setAttribute("film", film);
 		request.setAttribute("generi", generi);
