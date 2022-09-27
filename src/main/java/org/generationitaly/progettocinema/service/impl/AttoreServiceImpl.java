@@ -46,7 +46,6 @@ public class AttoreServiceImpl implements AttoreService {
 		return attore;
 	}
 
-
 	@Override
 	public Attore findByCognome(String cognome) {
 		Attore attore = null;
@@ -61,6 +60,39 @@ public class AttoreServiceImpl implements AttoreService {
 			PersistenceUtil.closeEntityManager();
 		}
 		return attore;
+	}
+
+	@Override
+	public List<Attore> orderAZ() {
+		List<Attore> attori = null;
+		try {
+			PersistenceUtil.beginTransaction();
+			attori = attoreRepository.orderAZ();
+			PersistenceUtil.commitTransaction();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			PersistenceUtil.rollbackTransaction();
+		} finally {
+			PersistenceUtil.closeEntityManager();
+		}
+		return attori;
+	}
+
+
+	@Override
+	public List<Attore> orderZA() {
+		List<Attore> attori = null;
+		try {
+			PersistenceUtil.beginTransaction();
+			attori = attoreRepository.orderZA();
+			PersistenceUtil.commitTransaction();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			PersistenceUtil.rollbackTransaction();
+		} finally {
+			PersistenceUtil.closeEntityManager();
+		}
+		return attori;
 	}
 
 }

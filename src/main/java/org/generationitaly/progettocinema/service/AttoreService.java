@@ -9,6 +9,11 @@ public interface AttoreService {
 	List<Attore> findAll();
 	
 	Attore findById(int id);
-	
+
 	Attore findByCognome(String cognome);
+
+	List<Attore> orderAZ();
+	
+	List<Attore> orderZA();
+	
 }
