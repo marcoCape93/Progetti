@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import org.generationitaly.progettocinema.entity.Attore;
 import org.generationitaly.progettocinema.entity.Film;
 import org.generationitaly.progettocinema.repository.FilmRepository;
 import org.generationitaly.progettocinema.util.PersistenceUtil;
@@ -37,6 +38,18 @@ public class FilmRepositoryImpl extends CrudRepositoryImpl<Film,Integer> impleme
 	public List<Film> findByGenere(String genere) {
 		EntityManager em = PersistenceUtil.getEntityManager();
 		return em.createQuery("select a from Film a where a.genere=:genere", Film.class).setParameter("genere", genere).getResultList();
+	}
+
+	@Override
+	public List<Film> orderAZ() {
+		EntityManager em = PersistenceUtil.getEntityManager();
+		return em.createQuery("select a from Film a order by titolo", Film.class).getResultList();
+	}
+
+	@Override
+	public List<Film> orderZA() {
+		EntityManager em = PersistenceUtil.getEntityManager();
+		return em.createQuery("select a from Film a order by titolo desc", Film.class).getResultList();		
 	}
 	
 }

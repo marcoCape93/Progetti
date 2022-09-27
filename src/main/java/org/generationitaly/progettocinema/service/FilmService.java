@@ -17,4 +17,8 @@ public interface FilmService {
 	List<Integer> findAllAnno();
 
 	List<String> findAllGenere();
+	
+	List<Film> orderAZ();
+	
+	List<Film> orderZA();
 }
