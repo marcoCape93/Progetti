@@ -29,7 +29,10 @@ public class AnnoFilmServlet extends HttpServlet {
 		int anno = Integer.parseInt(request.getParameter("anno"));
 		List<Film> anni = filmRepository.findAllAnno();
 		List<Film> film = filmRepository.findByAnno(anno);
+		List<Film> generi = filmRepository.findAllGenere();
+		
 		request.setAttribute("anni", anni);
+		request.setAttribute("generi", generi);
 		request.setAttribute("film", film);
 		request.getRequestDispatcher("AllFilm.jsp").forward(request, response);
 	}

@@ -29,6 +29,7 @@ public class FindAllServlet extends HttpServlet {
 		List<Film> film = filmRepository.findAll();
 		List<Film> anni = filmRepository.findAllAnno();
 		List<Film> generi = filmRepository.findAllGenere();
+		
 		request.setAttribute("film", film);
 		request.setAttribute("generi", generi);
 		request.setAttribute("anni", anni);

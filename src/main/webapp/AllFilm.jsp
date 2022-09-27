@@ -11,6 +11,7 @@
 	<form action="AnnoFilmServlet" method="get">
 		<label for="anno">Anno</label>
 			<select name="anno">
+			<option >Seleziona..</option>
 			<c:forEach items="${anni}" var="f">
 				<option value="${f.anno}">${f.anno}</option>
 			</c:forEach>
@@ -20,6 +21,7 @@
 	<form action="find-by-genere" method="get">
 		<label for="genere">Genere</label>
 			<select name="genere">
+			<option >Seleziona..</option>
 			<c:forEach items="${generi}" var="f">
 				<option value="${f.genere}">${f.genere}</option>
 			</c:forEach>

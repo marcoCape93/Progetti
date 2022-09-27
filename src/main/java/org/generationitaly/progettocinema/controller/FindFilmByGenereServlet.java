@@ -27,11 +27,11 @@ public class FindFilmByGenereServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String genere = request.getParameter("genere");
 		List<Film> generi = filmRepository.findAllGenere();
+		List<Film> anni = filmRepository.findAllAnno();
 		List<Film> film = filmRepository.findByGenere(genere);
-//		for(Film m:film) {
-//			System.out.println(m);
-//		}
+		
 		request.setAttribute("generi", generi);
+		request.setAttribute("anni", anni);
 		request.setAttribute("film", film);
 		request.getRequestDispatcher("AllFilm.jsp").forward(request, response);
 	}	
