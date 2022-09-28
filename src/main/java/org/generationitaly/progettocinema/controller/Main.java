@@ -15,13 +15,11 @@ public class Main {
 		FilmRepository filmRepository = new FilmRepositoryImpl();
 		UtenteRepository utenteRepository = new UtenteRepositoryImpl();
 //		List<String> genere = filmRepository.findAll();
-		List<Utente> anno = utenteRepository.findAll();
+		Utente anno = utenteRepository.findByUsername("ff");
 //		for(String f:genere) {
 //			System.out.println(f);
 //		}
-		for(Utente f:anno) {
-			System.out.println(f.getNome());
-		}
+		System.out.println(anno.getUsername());
 	}
 
 }

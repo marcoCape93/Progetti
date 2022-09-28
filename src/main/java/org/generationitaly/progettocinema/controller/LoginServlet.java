@@ -1,7 +1,6 @@
 package org.generationitaly.progettocinema.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -44,26 +43,13 @@ public class LoginServlet extends HttpServlet {
 			return;
 		}
 		
-		List<Utente> utenti = utenteService.findAll();
-		int x = 0;
-		for(Utente u:utenti) {
-			if(u.getUsername().equals(username)) {
-				if(u.getPassword().equals(password)) {
-					HttpSession session = request.getSession();
-					session.setAttribute("username", username);
-					response.sendRedirect("tuttiFilm");
-					break;
-				}else{
-					request.getRequestDispatcher("login.jsp").forward(request, response);
-				}
+		Utente u = utenteService.findByUsername(username);
+			if(u != null && u.getPassword().equals(password)) { 
+				HttpSession session = request.getSession();
+				session.setAttribute("username", username);
+				response.sendRedirect("tuttiFilm");
+			}else{
+				request.getRequestDispatcher("login.jsp").forward(request, response);
 			}
-			if(!u.getUsername().equals(username)) {
-				x++;
-				if(x == utenti.size()) {
-					request.getRequestDispatcher("login.jsp").forward(request, response);
-				}
-			}
-		}
 	}
-
 }

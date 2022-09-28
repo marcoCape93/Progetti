@@ -1,7 +1,6 @@
 package org.generationitaly.progettocinema.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -35,17 +34,17 @@ public class RegistrationServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		boolean hasErrors = false;
-		List<Utente> utenti = utenteService.findAll();
-		for(Utente u:utenti) {
-			if(u.getUsername().equals(username)) {
-				request.setAttribute("errUser2", "Già in uso");
-				hasErrors = true;
-			}
-			if(u.getEmail().equals(mail)) {
-				request.setAttribute("errGmail2", "Già in uso");
-				hasErrors = true;
-			}
+		Utente u = utenteService.findByUsername(username);
+
+		if(u.getUsername().equals(username)) {
+			request.setAttribute("errUser2", "Già in uso");
+			hasErrors = true;
 		}
+		if(u.getEmail().equals(mail)) {
+			request.setAttribute("errGmail2", "Già in uso");
+			hasErrors = true;
+		}
+
 		if (mail.isBlank()) {
 			request.setAttribute("errMail", "Campo obbligatori");
 			hasErrors = true;

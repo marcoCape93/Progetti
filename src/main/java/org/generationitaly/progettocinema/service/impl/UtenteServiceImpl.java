@@ -56,5 +56,20 @@ public class UtenteServiceImpl implements UtenteService{
 			PersistenceUtil.closeEntityManager();
 		}
 	}
+	@Override
+	public Utente findByUsername(String x) {
+		Utente ut = null;
+		try {
+			PersistenceUtil.beginTransaction();
+			ut = utenteRepository.findByUsername(x);
+			PersistenceUtil.commitTransaction();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			PersistenceUtil.rollbackTransaction();
+		} finally {
+			PersistenceUtil.closeEntityManager();
+		}
+		return ut;
+	}
 	
 }
