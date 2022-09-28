@@ -13,9 +13,12 @@
 		<button type="submit">Info Attore</button>
 		</form>
 		<br>
+		<form action="findById-film" method="get">
+		<input type="hidden" name="id" value="5">
 		
 		<!-- <form action="findById-film" method="get">
 		<input type="hidden" name="id" value="1">
+>>>>>>> branch 'master' of https://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@github.com/marcoCape93/Progetto-Cinema.git
 		<button type="submit">Info Film</button>
 		</form> -->
 		
