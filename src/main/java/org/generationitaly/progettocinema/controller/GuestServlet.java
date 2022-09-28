@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.generationitaly.progettocinema.entity.Utente;
 import org.generationitaly.progettocinema.service.UtenteService;
@@ -24,7 +25,7 @@ public class GuestServlet extends HttpServlet {
 	UtenteService utenteService = new UtenteServiceImpl();
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Sei qui in guest");
+//		System.out.println("Sei qui in guest");
 		Random random = new Random();
 		String username = "";
 		List<Utente> utenti =  utenteService.findAll();
@@ -34,9 +35,8 @@ public class GuestServlet extends HttpServlet {
 				username = "Guest"+x;
 			}while((u.getUsername().equals(username)));
 		}
-		Utente utente = new Utente();
-		utente.setUsername(username);
-		response.sendRedirect("tuttiFilm");
-		
+		HttpSession session = request.getSession();
+		session.setAttribute("username", username);
+		response.sendRedirect("tuttiFilm");		
 	}
 }

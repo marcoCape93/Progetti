@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.generationitaly.progettocinema.entity.Utente;
 import org.generationitaly.progettocinema.service.UtenteService;
@@ -70,6 +71,8 @@ public class RegistrationServlet extends HttpServlet {
 		utente.setUsername(username);
 		utente.setPassword(password);
 		utenteService.save(utente);
+		HttpSession session = request.getSession();
+		session.setAttribute("username", username);
 		response.sendRedirect("tuttiFilm");
 	}
 

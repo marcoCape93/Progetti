@@ -8,6 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<div>
+	<% String username = (String)session.getAttribute("username"); %>
+		<span style="color: black;"><%= username %></span>
+		<form action="logout" method="post">
+			<button type="submit">Logout</button>
+		</form>
+	</div>
 	<form action="AnnoFilmServlet" method="get">
 		<label for="anno">Anno</label>
 			<select name="anno">
