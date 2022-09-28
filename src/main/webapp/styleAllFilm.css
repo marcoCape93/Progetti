@@ -1,0 +1,40 @@
+@charset "ISO-8859-1";
+
+@import url("https://fonts.googleapis.com/css?family=Questrial");
+
+* {
+	font-family: Questrial;
+	
+}
+
+.container {
+    min-height: 100vh;
+    display: grid; 
+    grid-template-columns: 480px 1fr;
+    grid-gap: 32px; 
+    backdrop-filter: blur(12px) contrast(80);
+    color: white; 
+}
+
+.tabella {
+	
+	margin-top: 30px;
+}
+
+.locandina {
+	width: 80%;
+    height: 80%;
+    align-self: center;
+}
+
+.tasto {
+	align-self: center;
+	margin-top: 5px;
+}
+
+.prova {
+	display: flex;
+	flex-direction: column;
+	height: 200px;
+	width: 160px;
+}
