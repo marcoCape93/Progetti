@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+	font-family: 'Questrial';
     transition: all 0.35s linear; 
 }
 
@@ -46,14 +45,14 @@ div {
 /* Locandina */ 
 
 .poster {
-    width: 480px;
-    height: 100vh;
+    width: 520px;
+    height: 120vh;
     overflow: hidden;
 }
 
 .poster img {
-    width: 480px;
-    height: 100vh;
+    width: 520px;
+    height: 120vh;
     object-fit: cover;
     overflow: hidden;
     transition: all 1.5s ease-in-out;
@@ -140,3 +139,29 @@ div {
     }
 }
 
+.list {
+  color: white;
+  display: flex;
+
+}
+
+.foto-dati{
+    display: flex;
+    flex-direction: column;
+    width: 85px;
+    height: 135px;
+    margin: 20px;
+}
+
+.foto{
+    align-items: center;
+}
+
+.dati{
+    text-align: center;
+    font-size: 9px; 
+}
+
+#info-film {
+	margin-top: 40px; 
+}

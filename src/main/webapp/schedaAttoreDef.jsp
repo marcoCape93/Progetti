@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pagina Film</title>
+<title>Pagina Attore</title>
 <link rel="stylesheet" href="styles-film.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
@@ -29,67 +29,44 @@
 			<div class="row">
 				<div class="col lg-4">
 					<div class="poster" style="margin-left: -12px">
-						<img alt="Locandina per ${film.titolo}" src="${film.locandina}">
+						<img alt="Locandina per ${attore.foto}" src="${attore.foto}">
 					</div>
 				</div>
 				<div class="col lg-8" id="info-film">
 					<div class="info" style="margin-top: -40px">
 						<div class="movie-title">
-							<c:out value="${film.titolo}" />
+							<c:out value="${attore.nome}" /> <c:out value="${attore.cognome}" />
 						</div>
 						<div class="movie-detail">
 							<br>
 							<div class="set">
-								<label>Genere</label>
-								<c:out value="${film.genere}" />
+								<label>Data di nascita</label>
+								<c:out value="${attore.dataNascita}" />
 							</div>
 							<div class="set">
-								<label>Regista</label>
-								<c:out value="${film.regista}" />
-							</div>
-							<br>
-							<div class="set">
-								<label>Distribuzione</label>
-								<c:out value="${film.distribuzione}" />
-							</div>
-							<div class="set">
-								<label>Paese</label>
-								<c:out value="${film.paese}" />
-							</div>
-							<div class="set">
-								<label>Anno</label>
-								<c:out value="${film.anno}" />
+								<label>Luogo di nascita</label>
+								<c:out value="${attore.luogoNascita}" />
 							</div>
 							<br>
 							<div class="set">
-								<label>Durata</label>
-								<c:out value="${film.durata} minuti" />
-							</div>
-							<div class="set">
-								<label>Voto</label>
-								<c:out value="${film.voto}" />
-							</div>
-							<br>
-							<br>
-							<div class="set">
-								<label>Descrizione</label> <span><c:out
-										value="${film.descrizione}" /></span>
+								<label>Biografia</label>
+								<c:out value="${attore.biografia}" />
 							</div>
 						</div>
 
 						<div class="movie-cast">
 							<br>
-							<div class="header">Cast</div>
+							<div class="header">Filmografia</div>
 							<div class="list" style="margin-top: -20px">
-								<c:forEach items="${film.cast}" var="a">
+								<c:forEach items="${attore.filmografia}" var="f">
 									<div class="foto-dati">
 										<div class="foto">
-											<img alt="Locandina per ${attore.foto}"
-												src="${a.attore.foto}">
+											<img alt="Locandina per ${f.film.locandina}"
+												src="${f.film.locandina}">
 										</div>
 										<div class="dati">
-											<c:out value="${a.attore.nome}" />
-											<c:out value="${a.attore.cognome}" />
+											<c:out value="${f.film.titolo}" />
+											(<c:out value="${f.film.anno}" />)
 										</div>
 									</div>
 								</c:forEach>

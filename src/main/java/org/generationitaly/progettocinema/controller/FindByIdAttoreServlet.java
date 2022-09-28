@@ -27,7 +27,7 @@ public class FindByIdAttoreServlet extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("id"));
 		Attore attore = attoreService.findById(id);
 		request.setAttribute("attore", attore);
-		request.getRequestDispatcher("schedaAttoreId.jsp").forward(request, response);
+		request.getRequestDispatcher("schedaAttoreDef.jsp").forward(request, response);
 	}
 
 }

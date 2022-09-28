@@ -54,6 +54,6 @@ public class FilmRepositoryImpl extends CrudRepositoryImpl<Film,Integer> impleme
 	@Override
 	public List<Film> findByTitolo(String titolo) {
 		EntityManager em = PersistenceUtil.getEntityManager();
-		return em.createQuery("select a from Film a where a.titolo=:titolo", Film.class).setParameter("titolo", titolo).getResultList();
+		return em.createQuery("select a from Film a where a.titolo LIKE concat('%',:titolo,'%')", Film.class).setParameter("titolo", titolo).getResultList();
 	}
 }
