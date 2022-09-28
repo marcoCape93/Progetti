@@ -21,7 +21,8 @@ import org.generationitaly.progettocinema.service.impl.UtenteServiceImpl;
 public class RegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	UtenteService utenteService = new UtenteServiceImpl();
+//	private UtenteRepository utenteRepository = new UtenteRepositoryImpl();
+	private UtenteService utenteService = new UtenteServiceImpl();
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -34,16 +35,27 @@ public class RegistrationServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		boolean hasErrors = false;
+		List<Utente> utenti = utenteService.findAll();
+		for(Utente u:utenti) {
+			if(u.getUsername().equals(username)) {
+				request.setAttribute("errUser2", "Già in uso");
+				hasErrors = true;
+			}
+			if(u.getEmail().equals(mail)) {
+				request.setAttribute("errGmail2", "Già in uso");
+				hasErrors = true;
+			}
+		}
 		if (mail.isBlank()) {
-			request.setAttribute("errUser", "Campo obbligatori");
+			request.setAttribute("errMail", "Campo obbligatori");
 			hasErrors = true;
 		}
 		if (nome.isBlank()) {
-			request.setAttribute("errUser", "Campo obbligatori");
+			request.setAttribute("errNome", "Campo obbligatori");
 			hasErrors = true;
 		}
 		if (cognome.isBlank()) {
-			request.setAttribute("errUser", "Campo obbligatori");
+			request.setAttribute("errCognome", "Campo obbligatori");
 			hasErrors = true;
 		}
 		if (username.isBlank()) {
@@ -51,19 +63,13 @@ public class RegistrationServlet extends HttpServlet {
 			hasErrors = true;
 		}
 		if (password.isBlank()) {
-			request.setAttribute("errUser", "Campo obbligatori");
+			request.setAttribute("errPass", "Campo obbligatori");
 			hasErrors = true;
 		}
 		if (hasErrors) {
 			request.getRequestDispatcher("registration.jsp").forward(request, response);
 			return;
-		}
-		List<Utente> utenti = utenteService.findAll();
-		for(Utente u:utenti) {
-			if(u.getUsername().equals(username) && u.getPassword().equals(password) && u.getEmail().equals(mail)) {
-				request.getRequestDispatcher("login.jsp").forward(request, response);
-			}
-		}
+		}	
 		Utente utente = new Utente();
 		utente.setEmail(mail);
 		utente.setNome(nome);

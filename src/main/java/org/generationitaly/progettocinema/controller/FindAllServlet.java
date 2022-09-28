@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.generationitaly.progettocinema.entity.Film;
-import org.generationitaly.progettocinema.repository.FilmRepository;
-import org.generationitaly.progettocinema.repository.impl.FilmRepositoryImpl;
+import org.generationitaly.progettocinema.service.FilmService;
+import org.generationitaly.progettocinema.service.impl.FilmServiceImpl;
 
 /**
  * Servlet implementation class FindAllServlet
@@ -20,15 +20,15 @@ import org.generationitaly.progettocinema.repository.impl.FilmRepositoryImpl;
 public class FindAllServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
-	private FilmRepository filmRepository = new FilmRepositoryImpl();
+	private FilmService filmService = new FilmServiceImpl();
 	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Film> film = filmRepository.findAll();
-		List<Integer> anni = filmRepository.findAllAnno();
-		List<String> generi = filmRepository.findAllGenere();
+		List<Film> film = filmService.findAll();
+		List<Integer> anni = filmService.findAllAnno();
+		List<String> generi = filmService.findAllGenere();
 		
 		request.setAttribute("film", film);
 		request.setAttribute("generi", generi);

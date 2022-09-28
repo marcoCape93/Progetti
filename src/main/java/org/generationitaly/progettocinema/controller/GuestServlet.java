@@ -22,7 +22,7 @@ import org.generationitaly.progettocinema.service.impl.UtenteServiceImpl;
 public class GuestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	UtenteService utenteService = new UtenteServiceImpl();
+	private UtenteService utenteService = new UtenteServiceImpl();
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //		System.out.println("Sei qui in guest");
