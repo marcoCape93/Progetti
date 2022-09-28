@@ -75,7 +75,7 @@
                        			    <br>
                        			    <div class="attori">
                        			    <c:forEach items="${film.cast}" var="a">
-                    				 - <c:out value="${a.attore.nome}"/> <c:out value="${a.attore.cognome}"/> -
+                    				<c:out value="${a.attore.nome}"/> <c:out value="${a.attore.cognome}"/>
                        			    </c:forEach>
                        			    </div>
                     			</div>
