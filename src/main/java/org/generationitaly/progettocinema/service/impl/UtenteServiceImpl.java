@@ -2,6 +2,7 @@ package org.generationitaly.progettocinema.service.impl;
 
 import java.util.List;
 
+import org.generationitaly.progettocinema.entity.Film;
 import org.generationitaly.progettocinema.entity.Utente;
 import org.generationitaly.progettocinema.repository.UtenteRepository;
 import org.generationitaly.progettocinema.repository.impl.UtenteRepositoryImpl;
@@ -70,6 +71,37 @@ public class UtenteServiceImpl implements UtenteService{
 			PersistenceUtil.closeEntityManager();
 		}
 		return ut;
+	}
+
+	@Override
+	public Utente findById(int id) {
+		Utente utente = null;
+		try {
+			PersistenceUtil.beginTransaction();
+			utente = utenteRepository.findById(id);
+			PersistenceUtil.commitTransaction();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			PersistenceUtil.rollbackTransaction();
+		} finally {
+			PersistenceUtil.closeEntityManager();
+		}
+		return utente;
+	}
+
+	@Override
+	public void update(Utente Utente) {
+		try {
+			PersistenceUtil.beginTransaction();
+			utenteRepository.update(Utente);
+			PersistenceUtil.commitTransaction();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			PersistenceUtil.rollbackTransaction();
+		} finally {
+			PersistenceUtil.closeEntityManager();
+		}
+		
 	}
 	
 }

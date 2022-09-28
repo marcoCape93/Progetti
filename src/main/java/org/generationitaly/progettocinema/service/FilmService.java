@@ -3,6 +3,7 @@ package org.generationitaly.progettocinema.service;
 import java.util.List;
 
 import org.generationitaly.progettocinema.entity.Film;
+import org.generationitaly.progettocinema.entity.Utente;
 
 public interface FilmService {
 	
@@ -23,4 +24,6 @@ public interface FilmService {
 	List<Film> orderAZ();
 	
 	List<Film> orderZA();
+	
+	void update(Film film);
 }

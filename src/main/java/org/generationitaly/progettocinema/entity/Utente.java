@@ -78,6 +78,12 @@ public class Utente {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	@Override
+	public String toString() {
+		return "Utente [id=" + id + ", nome=" + nome + ", cognome=" + cognome + ", username=" + username + ", email="
+				+ email + ", password=" + password + "]";
+	}
 	
 	
 }

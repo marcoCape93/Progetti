@@ -26,7 +26,7 @@ public class FilmUtenti {
 	@JoinColumn(name = "utente_id", nullable = false)
 	private Utente utente;
 	
-	@Column(name = "voto")
+	@Column(name = "voto", nullable = false)
 	private int voto;
 
 	public int getId() {
