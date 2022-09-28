@@ -9,8 +9,7 @@
 </head>
 <body>
 	<div>
-	<% String username = (String)session.getAttribute("username"); %>
-		<span style="color: black;"><%= username %></span>
+		<span style="color: black;"><c:out value="${username}"></c:out></span>
 		<form action="logout" method="post">
 			<button type="submit">Logout</button>
 		</form>
@@ -18,12 +17,12 @@
 	<form action="AnnoFilmServlet" method="get">
 		<label for="anno">Anno</label>
 			<select name="anno">
-			<option >Seleziona..</option>
+			<option>Seleziona..</option>
 			<c:forEach items="${anni}" var="f">
 				<option value="${f}">${f}</option>
 			</c:forEach>
 			</select>
-		<button type="submit">Cerca</button>
+		<button type="submit">Cerca</button>	
 	</form>
 	<form action="find-by-genere" method="get">
 		<label for="genere">Genere</label>

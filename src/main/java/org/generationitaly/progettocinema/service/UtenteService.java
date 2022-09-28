@@ -11,4 +11,6 @@ public interface UtenteService {
 	void save(Utente utente);
 	
 	void delete(int id);
+
+	Utente findByUsername(String x);
 }

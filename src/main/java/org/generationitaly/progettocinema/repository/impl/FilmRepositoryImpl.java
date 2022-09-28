@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import org.generationitaly.progettocinema.entity.Attore;
 import org.generationitaly.progettocinema.entity.Film;
 import org.generationitaly.progettocinema.repository.FilmRepository;
 import org.generationitaly.progettocinema.util.PersistenceUtil;
