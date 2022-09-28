@@ -13,10 +13,12 @@
 		<button type="submit">Info Attore</button>
 		</form>
 		<br>
-		<form action="findById-film" method="get">
+		
+		<!-- <form action="findById-film" method="get">
 		<input type="hidden" name="id" value="1">
 		<button type="submit">Info Film</button>
-		</form>
+		</form> -->
+		
 		 <br>
 		 <form action="findCognome-attore" method="get">
 		 <input type="text" name="cognome">

@@ -60,6 +60,12 @@
 					<td><c:out value="${f.durata}" /></td>
 					<td><c:out value="${f.descrizione}" /></td>
 					<td><img alt="Immagine di copertina per ${f.titolo}" src="${f.locandina}"></td>
+					<td>
+						<form action="findById-film" method="get">
+						<input type="hidden" name="id" value="${f.id}">
+						<button type="submit">Info Film</button>
+						</form>
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>
