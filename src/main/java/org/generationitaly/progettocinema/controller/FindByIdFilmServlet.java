@@ -27,7 +27,7 @@ public class FindByIdFilmServlet extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("id"));
 		Film film = filmService.findById(id);
 		request.setAttribute("film", film);
-		request.getRequestDispatcher("schedaFilmId.jsp").forward(request, response);
+		request.getRequestDispatcher("schedaFilm.jsp").forward(request, response);
 		
 	}
 
