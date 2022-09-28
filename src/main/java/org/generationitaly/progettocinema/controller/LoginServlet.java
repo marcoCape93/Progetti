@@ -21,7 +21,7 @@ import org.generationitaly.progettocinema.service.impl.UtenteServiceImpl;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	UtenteService utenteService = new UtenteServiceImpl();
+	private UtenteService utenteService = new UtenteServiceImpl();
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
