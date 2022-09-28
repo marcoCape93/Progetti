@@ -34,6 +34,7 @@ public class FindFilmByGenereServlet extends HttpServlet {
 		request.setAttribute("anni", anni);
 		request.setAttribute("film", film);
 		request.getRequestDispatcher("AllFilm.jsp").forward(request, response);
+		
 	}	
 
 }

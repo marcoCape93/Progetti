@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.generationitaly.progettocinema.entity.Utente;
 import org.generationitaly.progettocinema.service.UtenteService;
@@ -44,13 +45,25 @@ public class LoginServlet extends HttpServlet {
 		}
 		
 		List<Utente> utenti = utenteService.findAll();
+		int x = 0;
 		for(Utente u:utenti) {
-			System.out.println(u.getNome());
-			if(u.getUsername().equals(username) && u.getPassword().equals(password)) {
-				response.sendRedirect("tuttiFilm");
+			if(u.getUsername().equals(username)) {
+				if(u.getPassword().equals(password)) {
+					HttpSession session = request.getSession();
+					session.setAttribute("username", username);
+					response.sendRedirect("tuttiFilm");
+					break;
+				}else{
+					request.getRequestDispatcher("login.jsp").forward(request, response);
+				}
+			}
+			if(!u.getUsername().equals(username)) {
+				x++;
+				if(x == utenti.size()) {
+					request.getRequestDispatcher("login.jsp").forward(request, response);
+				}
 			}
 		}
-		request.getRequestDispatcher("registration.jsp").forward(request, response);
 	}
 
 }
