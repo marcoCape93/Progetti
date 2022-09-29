@@ -23,7 +23,7 @@
 	   <include src="./navbar.html"></include>
 
 </head>
-<body>
+<body style="background-color: #1E1D1D;">
 	<!-- commento -->
 	<div class="background-image">
 		<div class="container-fluid">
