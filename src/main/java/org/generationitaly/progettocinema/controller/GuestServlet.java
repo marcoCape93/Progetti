@@ -39,6 +39,6 @@ public class GuestServlet extends HttpServlet {
 		String x = "Seleziona...";
 		request.setAttribute("select", x);
 		session.setAttribute("username", username);
-		response.sendRedirect("tuttiFilm");		
+		response.sendRedirect("home-page.jsp");		
 	}
 }

@@ -24,7 +24,7 @@
 <include src="./navbar.html"></include>
 
 </head>
-<body style="background-color: #1E1D1D;">
+<body style="background-color: white;">
 
 	<br>
 	<br>
@@ -36,14 +36,28 @@
 
 		<br>
 
-		<div class="link-pagine">
-			<div class="row">
-				<div class="col-6">Prima parte</div>
-				<div class="col-6">Seconda parte</div>
-			</div>
-		</div>
+			<div class="container text-center" id="products">
+				
+				<a
+					href="https://www.badtaste.it/cinema/articoli/avatar-2-james-cameron-sceneggiatura-scartata/" target="_blank">
+					<div class="slider"
+						style="background-image: url(https://www.webstaurantstore.com/uploads/seo_category/2021/8/popcorn-header.jpg)">
+						<div class="productInfo">
+							<p class="productText">Archivio Film</p>
+						</div>
+					</div>
+				</a> <a
+					href="https://www.badtaste.it/cinema/articoli/ryan-reynolds-hugh-jackman-wolverine-deadpool-3-data-uscita/" target="_blank">
+					<div class="slider"
+						style="background-image: url(https://mr.comingsoon.it/imgdb/PrimoPiano/137650_ppl.jpg)">
+						<div class="productInfo">
+							<p class="productText">Archivio Attori</p>
+						</div>
+					</div>
+				</a> 
+			</div>	
 
-		<br>
+		<br><br>
 
 		<div class="ricerca1">
 			<div class="row">
@@ -59,7 +73,7 @@
 			</div>
 		</div>
 
-		<br>
+		<br><br>
 		
 			<div class="title-blog" style="background-color: white">
 			<h3 style="text-align: center">🎬 Le news del momento 🎬</h3>
@@ -67,6 +81,10 @@
 			</div>
 			
 			<br>
+			
+			<div class="sfondo-blog">
+			
+			<br><br>
 
 			<div class="container text-center" id="products">
 							
@@ -96,14 +114,16 @@
 					</div>
 				</a>
 			</div>
+			
+						<br>
+			
+			</div>
 
 	</div>   
 	
-	<br><br>
-	
+	<br><br><br>
+		
 	<include src="./footer.html"></include>
-	
-	<br><br>
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
