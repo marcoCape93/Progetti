@@ -17,6 +17,7 @@
 					<c:out value="${errMail}"/>
 				</span>
 			</c:if>
+			<span id="closeSpan"><c:out value="${errGmail2}"/></span>
 			<label for="nome" class="">Nome</label>
 			<input class="" type="text" name="nome" required>
 			<c:if test="${errNome != null}">
@@ -38,6 +39,7 @@
 					<c:out value="${errUser}"/>
 				</span>
 			</c:if>
+			<span id="closeSpan2"><c:out value="${errUser2}"/></span>
 			<label for="password" class="">Password</label>
 			<input class="" type="password" name="password" required>
 			<c:if test="${errPass != null}">
@@ -48,5 +50,13 @@
 			<button class="" type="submit">Login</button>
 		</form>
 	</div>
+	<script type="text/javascript">
+		setTimeout(function(){
+			var x = document.getElementById("closeSpan");
+			x.parentNode.removeChild(x);
+	        var y = document.getElementById("closeSpan2");
+			y.parentNode.removeChild(y);
+		},3000);
+	</script>
 </body>
 </html>

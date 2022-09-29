@@ -17,10 +17,14 @@ public interface FilmService {
 	List<Integer> findAllAnno();
 
 	List<String> findAllGenere();
+	
+	List<String> findAllTitoli();
 
 	List<Film> findByTitolo(String titolo);	
 	
 	List<Film> orderAZ();
 	
 	List<Film> orderZA();
+
+	List<Film> findByAnnoAndGenere(int anno, String genere);
 }

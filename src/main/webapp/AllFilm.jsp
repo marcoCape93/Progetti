@@ -14,26 +14,32 @@
 			<button type="submit">Logout</button>
 		</form>
 	</div>
-	<form action="AnnoFilmServlet" method="get">
-		<label for="anno">Anno</label>
-			<select name="anno">
-			<option>Seleziona..</option>
-			<c:forEach items="${anni}" var="f">
-				<option value="${f}">${f}</option>
-			</c:forEach>
-			</select>
-		<button type="submit">Cerca</button>	
-	</form>
-	<form action="find-by-genere" method="get">
-		<label for="genere">Genere</label>
-			<select name="genere">
-			<option >Seleziona..</option>
-			<c:forEach items="${generi}" var="f">
-				<option value="${f}">${f}</option>
-			</c:forEach>
-			</select>
-		<button type="submit">Cerca</button>
-	</form>
+	<div style="text-align: center">
+		<form action="RicercaServlet" method="get">
+			<label for="anni">Anno</label>
+				<select name="anni">
+				<option value="0"><c:out value="Seleziona.."/></option>
+				<c:forEach items="${anni}" var="f">
+					<option value="${f}">${f}</option>
+				</c:forEach>
+				</select>		
+			<label for="generi">Genere</label>
+				<select name="generi">
+				<option value=""><c:out value="Seleziona.."/></option>
+				<c:forEach items="${generi}" var="f">
+					<option value="${f}">${f}</option>
+				</c:forEach>
+				</select>	
+			<label for="titoli">Titolo</label>
+				<select name="titoli">
+				<option value=""><c:out value="Seleziona.."/></option>
+				<c:forEach items="${titoli}" var="f">
+					<option value="${f}">${f}</option>
+				</c:forEach>
+				</select>
+			<button type="submit">Cerca</button>
+		</form>
+	</div>
 	<table>
 		<thead>
 			<tr>

@@ -158,5 +158,38 @@ public class FilmServiceImpl implements FilmService{
 		return film;
 	}
 
+
+	@Override
+	public List<String> findAllTitoli() {
+		List<String> film = null;
+		try {
+			PersistenceUtil.beginTransaction();
+			film = filmRepository.findAllTitoli();
+			PersistenceUtil.commitTransaction();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			PersistenceUtil.rollbackTransaction();
+		} finally {
+			PersistenceUtil.closeEntityManager();
+		}
+		return film;
+	}
+	
+	@Override
+	public List<Film> findByAnnoAndGenere(int anno,String genere) {
+		List<Film> film = null;
+		try {
+			PersistenceUtil.beginTransaction();
+			film = filmRepository.findByAnnoAndGenere(anno,genere);
+			PersistenceUtil.commitTransaction();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			PersistenceUtil.rollbackTransaction();
+		} finally {
+			PersistenceUtil.closeEntityManager();
+		}
+		return film;
+	}
+
 	
 }
