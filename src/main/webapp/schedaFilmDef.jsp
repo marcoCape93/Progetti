@@ -80,7 +80,7 @@
 		
 		<form action="AddVoto" method="post">
 			<div class="rating">
-			<input type="hidden" name="id-film" value="${film.id }">
+			<input type="hidden" name="id-film" value="1">
 			<input type="hidden" name="id-utente" value="${utente.id }">
 				
 				<i class='bx bx-star star' style="--i: 0;"></i>

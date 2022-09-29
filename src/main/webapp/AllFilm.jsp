@@ -48,6 +48,7 @@
 							<td>
 								<form action="findById-film" method="get">
 									<input type="hidden" name="id" value="${f.id}">
+									<input type="hidden" name="idUtente" value="${utente.id }">
 									<div class="foto">
 										<input type="image" src="${f.locandina}" value="${f.id}"
 											name="id" alt="Locandina per ${f.titolo}">

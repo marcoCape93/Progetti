@@ -14,7 +14,7 @@ import org.generationitaly.progettocinema.service.UtenteService;
 import org.generationitaly.progettocinema.service.impl.FilmServiceImpl;
 import org.generationitaly.progettocinema.service.impl.UtenteServiceImpl;
 
-import com.mysql.cj.Session;
+
 
 /**
  * Servlet implementation class FindByIdFilmServlet
