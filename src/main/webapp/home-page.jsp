@@ -21,7 +21,7 @@
 
 <script src="https://unpkg.com/htmlincludejs"></script>
 
-<include src="./navbarHomePage.html"></include>
+<include src="./navbar.html"></include>
 
 </head>
 <body style="background-color: white;">
