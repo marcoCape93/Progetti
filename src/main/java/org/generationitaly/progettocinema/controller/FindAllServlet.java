@@ -29,13 +29,12 @@ public class FindAllServlet extends HttpServlet {
 		List<Film> film = filmService.findAll();
 		List<Integer> anni = filmService.findAllAnno();
 		List<String> generi = filmService.findAllGenere();
-		
+		List<String> titoli = filmService.findAllTitoli();
 		request.setAttribute("film", film);
 		request.setAttribute("generi", generi);
 		request.setAttribute("anni", anni);
-//		for(Film m:film) {
-//			System.out.println(m);
-//		}
+		request.setAttribute("titoli", titoli);
+
 		request.getRequestDispatcher("AllFilm.jsp").forward(request, response);
 	}
 

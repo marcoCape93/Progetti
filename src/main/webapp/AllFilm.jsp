@@ -15,6 +15,41 @@
 	
 	</head>
 <body>
+<<<<<<< HEAD
+	<div>
+		<span style="color: black;"><c:out value="${username}"></c:out></span>
+		<form action="logout" method="post">
+			<button type="submit">Logout</button>
+		</form>
+	</div>
+	<div style="text-align: center">
+		<form action="RicercaServlet" method="get">
+			<label for="anni">Anno</label>
+				<select name="anni">
+				<option value="0"><c:out value="Seleziona.."/></option>
+				<c:forEach items="${anni}" var="f">
+					<option value="${f}">${f}</option>
+				</c:forEach>
+				</select>		
+			<label for="generi">Genere</label>
+				<select name="generi">
+				<option value=""><c:out value="Seleziona.."/></option>
+				<c:forEach items="${generi}" var="f">
+					<option value="${f}">${f}</option>
+				</c:forEach>
+				</select>	
+			<label for="titoli">Titolo</label>
+				<select name="titoli">
+				<option value=""><c:out value="Seleziona.."/></option>
+				<c:forEach items="${titoli}" var="f">
+					<option value="${f}">${f}</option>
+				</c:forEach>
+				</select>
+			<button type="submit">Cerca</button>
+		</form>
+	</div>
+	<table>
+=======
 
 <div class="container-fluid">
 	<div class="row">
@@ -51,6 +86,7 @@
 	</div>
 	<div class="col-6">
 	<table class="tabella table table-dark table-striped">
+>>>>>>> branch 'master' of https://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@github.com/marcoCape93/Progetto-Cinema.git
 		<thead>
 			<tr>
 				<th></th>

@@ -77,6 +77,7 @@ public class RegistrationServlet extends HttpServlet {
 		utente.setPassword(password);
 		utenteService.save(utente);
 		HttpSession session = request.getSession();
+		request.setAttribute("s", "Seleziona..");
 		session.setAttribute("username", username);
 		response.sendRedirect("tuttiFilm");
 	}

@@ -36,6 +36,8 @@ public class GuestServlet extends HttpServlet {
 			}while((u.getUsername().equals(username)));
 		}
 		HttpSession session = request.getSession();
+		String x = "Seleziona...";
+		request.setAttribute("select", x);
 		session.setAttribute("username", username);
 		response.sendRedirect("tuttiFilm");		
 	}
