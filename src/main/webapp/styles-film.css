@@ -143,22 +143,16 @@ div {
 
 }
 
-.foto-dati{
+.fotoprova{
     display: flex;
     flex-direction: column;
-    width: 85px;
-    height: 135px;
+    width: 80px;
+    height: 100px;
     margin: 20px;
 }
 
-.foto{
-    align-items: center;
-}
 
-.dati{
-    text-align: center;
-    font-size: 12px; 
-}
+
 
 #info-film {
 	margin-top: 40px; 
