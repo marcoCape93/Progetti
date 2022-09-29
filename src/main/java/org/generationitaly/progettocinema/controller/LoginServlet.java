@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
 		Utente u = utenteService.findByUsername(username);
 			if(u != null && u.getPassword().equals(password)) { 
 				HttpSession session = request.getSession();
-				session.setAttribute("username", username);
+				session.setAttribute("utente", u);
 				response.sendRedirect("tuttiFilm");
 			}else{
 				request.getRequestDispatcher("login.jsp").forward(request, response);
