@@ -8,7 +8,7 @@
     transition: all 0.35s linear; 
 }
 
-#products{
+#products{		
   width: 100%;
   margin:0 auto;
   display: grid;
@@ -17,7 +17,9 @@
   grid-gap: 100px;
   }
   
- .product{
+    /* Smartphone */
+@media (min-width:300px) {
+    .product{
   width: 350px;
   aspect-ratio: 3 / 3;
   border-radius: 10px;
@@ -26,7 +28,75 @@
   overflow: hidden;
   margin-top: auto;
   margin-right: 40px; 
+  margin-left: 45px; 
+  border: 3px solid #cccccc;
   }
+}  
+  
+    /* Desktop */
+@media (min-width:900px) {
+	.product {
+  width: 350px;
+  aspect-ratio: 3 / 3;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  margin-top: auto;
+  margin-right: 40px; 
+  margin-left: 10px; 
+  border: 3px solid #cccccc;
+  }
+}
+  
+ .product-2{
+  width: 350px;
+  aspect-ratio: 3 / 3;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  margin-top: auto;
+  margin-right: 40px; 
+  border: 3px solid #cccccc;
+  }
+  
+  
+    /* Smartphone */
+@media (min-width:300px) {
+    .slider{
+  width: 435px;
+  height: 150px; 
+  aspect-ratio: 2 / 2;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  margin-top: auto;
+  margin-right: 40px; 
+  margin-left: 7.5px; 
+  border: 3px solid #cccccc;
+  }
+}
+
+  
+      /* Desktop */
+@media (min-width:900px) {
+    .slider{
+  width: 600px;
+  height: 150px; 
+  aspect-ratio: 2 / 2;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  margin-top: auto;
+  margin-right: 40px; 
+  margin-left: 8.5px; 
+  border: 3px solid #cccccc;
+  }
+}
+  
   
  .productInfo{
   width:100%;
@@ -122,3 +192,19 @@ a {
     color: black;
   }
   
+
+      /* Smartphone */
+@media (min-width:300px) {
+  .sfondo-blog {
+  	background-color: #1E1D1D; 
+  	height:1380px; 
+  }
+}
+
+      /* Desktop */
+@media (min-width:900px) {
+  .sfondo-blog {
+  	background-color: #1E1D1D; 
+  	height: 460px; 
+  }
+}
