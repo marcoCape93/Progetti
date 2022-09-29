@@ -63,9 +63,9 @@
 									<figure class="figure foto">
 										<input type="hidden" name="id" value="${f.film.id }">
 										<div class="fotofilm">
-										<input type="image" src="${f.film.locandina}" value="${f.film.id }" name="id" 
-											alt="Locandina per ${f.film.locandina}" class="figure-img img-fluid rounded">
-											</div>
+												<input type="image" src="${f.film.locandina}" value="${f.film.id }" name="id" 
+												alt="Locandina per ${f.film.locandina}" class="figure-img img-fluid rounded">
+										</div>
 										<figcaption class="figure-caption text-center"><c:out value="${f.film.titolo}" />
 											<c:out value="${f.film.anno}" /></figcaption>
 									</figure>

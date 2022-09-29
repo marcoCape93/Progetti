@@ -146,12 +146,18 @@ div {
 .fotoprova{
     display: flex;
     flex-direction: column;
-    width: 80px;
-    height: 100px;
+    width: 130px;
+    height: 200px;
     margin: 20px;
 }
 
-
+.fotofilm{
+	display: flex;
+    flex-direction: column;
+    width: 130px;
+    height: 200px;
+    margin: 20px;
+}
 
 
 #info-film {

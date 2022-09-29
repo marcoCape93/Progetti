@@ -14,42 +14,7 @@
 	<include src="./navbar.html"></include>
 	
 	</head>
-<body>
-<<<<<<< HEAD
-	<div>
-		<span style="color: black;"><c:out value="${username}"></c:out></span>
-		<form action="logout" method="post">
-			<button type="submit">Logout</button>
-		</form>
-	</div>
-	<div style="text-align: center">
-		<form action="RicercaServlet" method="get">
-			<label for="anni">Anno</label>
-				<select name="anni">
-				<option value="0"><c:out value="Seleziona.."/></option>
-				<c:forEach items="${anni}" var="f">
-					<option value="${f}">${f}</option>
-				</c:forEach>
-				</select>		
-			<label for="generi">Genere</label>
-				<select name="generi">
-				<option value=""><c:out value="Seleziona.."/></option>
-				<c:forEach items="${generi}" var="f">
-					<option value="${f}">${f}</option>
-				</c:forEach>
-				</select>	
-			<label for="titoli">Titolo</label>
-				<select name="titoli">
-				<option value=""><c:out value="Seleziona.."/></option>
-				<c:forEach items="${titoli}" var="f">
-					<option value="${f}">${f}</option>
-				</c:forEach>
-				</select>
-			<button type="submit">Cerca</button>
-		</form>
-	</div>
-	<table>
-=======
+<body style="background-color: #1E1D1D">
 
 <div class="container-fluid">
 	<div class="row">
@@ -84,42 +49,53 @@
 			</form>
 		</div>
 	</div>
+	
+	<div class="row justify-content-center">
+	
 	<div class="col-6">
-	<table class="tabella table table-dark table-striped">
->>>>>>> branch 'master' of https://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@github.com/marcoCape93/Progetto-Cinema.git
+	
+	<table class="tabella table table-dark table-striped" >
 		<thead>
 			<tr>
 				<th></th>
 				<th>Titolo</th>
 				<th>Anno</th>
+				<th>Genere</th>
+				<!-- <th>Paese</th>
+				<th>Regista</th>
+				<th>Distribuzione</th> -->
 				<th>Durata</th>
-				
+				<!-- <th>Descrizione</th> -->
 				
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach items="${film}" var="f">
-				<tr>
+				<tr class="riga">
 					<td>
-						<div class="prova">
-						<div class="tasto">
+
 							<form action="findById-film" method="get">
 							<input type="hidden" name="id" value="${f.id}">
-							<input type="image" src="${f.locandina}" value="${f.id}" name="id" alt="Locandina per ${f.titolo}">
-								
+							
+							<div class="foto">
+								<input type="image" src="${f.locandina}" value="${f.id}" name="id" alt="Locandina per ${f.titolo}">
+							</div>
+							
 							</form>
-						</div>
-						</div>
+
 						
 					</td>
 					<td><c:out value="${f.titolo}" /></td>
 					<td><c:out value="${f.anno}" /></td>
+					<td><c:out value="${f.genere}" /></td>
 					<td><c:out value="${f.durata}" /></td>
+					<%-- <td><c:out value="${f.descrizione}" /></td> --%>
 					
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	</div>
 	</div>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" 
