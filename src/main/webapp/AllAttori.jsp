@@ -16,6 +16,7 @@
 	</head>
 <body style="background-color: #1E1D1D">
 
+<br><br><br>
 <div class="container-fluid">
 <%-- 	<div class="row">
 		<div class="col">
@@ -57,13 +58,12 @@
 	<table class="tabella table table-dark table-striped" >
 		<thead>
 			<tr>
-				<th>foto</th>
-				
+				<th></th>
 				<th>Nome</th>
 				<th>Cognome</th>
 				<th>Data di nascita</th>
 				<th>Luogo di nascita</th>
-				<th>Biografia</th>
+				
 				
 				<!-- <th>filmografia</th> -->
 				
@@ -88,7 +88,7 @@
 					<td><c:out value="${a.cognome}" /></td>
 					<td><c:out value="${a.dataNascita}" /></td>
 					<td><c:out value="${a.luogoNascita}" /></td>
-					<td><c:out value="${a.biografia}" /></td>
+					
 					
 				</tr>
 			</c:forEach>
