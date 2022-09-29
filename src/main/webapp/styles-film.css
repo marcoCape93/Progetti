@@ -140,25 +140,24 @@ div {
 .list {
   color: white;
   display: flex;
+  flex-wrap: wrap;
 
 }
 
-.foto-dati{
-    display: flex;
-    flex-direction: column;
-    width: 85px;
-    height: 135px;
+.fotoprova{
+
+    width: 130px;
+    height: 200px;
     margin: 20px;
 }
 
-.foto{
-    align-items: center;
+.fotofilm{
+
+    width: 130px;
+    height: 200px;
+    margin: 20px;
 }
 
-.dati{
-    text-align: center;
-    font-size: 12px; 
-}
 
 #info-film {
 	margin-top: 40px; 

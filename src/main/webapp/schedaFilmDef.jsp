@@ -88,8 +88,10 @@
 									<form action="findById-attore" method="get">
 									<figure class="figure foto">
 										<input type="hidden" name="id" value="${a.attore.id }">
-										<input type="image" src="${a.attore.foto}" value="${a.attore.id }" name="id" 
+										<div class="fotoprova">
+											<input type="image" src="${a.attore.foto}" value="${a.attore.id }" name="id" 
 											alt="Locandina per ${a.attore.cognome}" class="figure-img img-fluid rounded">
+										</div>
 										<figcaption class="figure-caption text-center"><c:out value="${a.attore.nome}" />
 											<c:out value="${a.attore.cognome}" /></figcaption>
 									</figure>

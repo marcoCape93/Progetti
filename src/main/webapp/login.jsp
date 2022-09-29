@@ -24,7 +24,8 @@
 			<div class="col align-self-center">
 			</div>
 			<div class="col align-self-center" id="login">
-				<div class=rettangolo" id="rettangolo">
+				<div class="rettangolo" id="rettangolo">
+				<form action="LoginServlet" method="post">
 				<br>
 				<label for="username" class="username">Username</label> 
 				<br>
@@ -42,7 +43,17 @@
 					</span>
 				</c:if>
 				<br><br>
-				<button class="button1" type="submit">Login</button> <a href="registrationDef.jsp"><button class="button2">Registrati</button></a>
+				
+				
+				<!--<input type="hidden" name="username" value="">
+				<input type="hidden" name="password" value="">-->
+				<button class="button1" type="submit">Login</button> 
+				</form>
+				
+				
+				
+				<br>
+				<a href="registrationDef.jsp"><button class="button2">Registrati</button></a>
 				<br><br>
 				<form action="GuestServlet" method="post" class="ospite">
 					<button class="button3" type="submit">Continua come ospite</button>
@@ -53,7 +64,7 @@
 			<div class="col align-self-center">
 			</div>
 		</div>
-	
+	</div>
 
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
