@@ -140,20 +140,19 @@ div {
 .list {
   color: white;
   display: flex;
+  flex-wrap: wrap;
 
 }
 
 .fotoprova{
-    display: flex;
-    flex-direction: column;
+
     width: 130px;
     height: 200px;
     margin: 20px;
 }
 
 .fotofilm{
-	display: flex;
-    flex-direction: column;
+
     width: 130px;
     height: 200px;
     margin: 20px;

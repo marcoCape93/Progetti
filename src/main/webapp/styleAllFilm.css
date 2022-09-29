@@ -18,7 +18,7 @@
 
 .foto{
 	display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;;
     width: 150px;
     height: 210px;
 
