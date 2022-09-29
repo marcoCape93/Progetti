@@ -25,7 +25,7 @@ public class FindAttoreCognome extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	String cognome = request.getParameter("cognome");
-	Attore attore = attoreService.findByCognome(cognome);
+	Attore attore = attoreService.findByCognome(cognome.toLowerCase());
 	request.setAttribute("attore", attore);
 	request.getRequestDispatcher("schedaAttoreId.jsp").forward(request, response);
 	

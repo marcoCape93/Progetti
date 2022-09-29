@@ -30,60 +30,38 @@ public class RicercaServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String titolo = request.getParameter("titoli");
 		String genere = request.getParameter("generi");
-		int anno = Integer.parseInt(request.getParameter("anni"));
+		String test = request.getParameter("anni");
+		int anno = 0;
+		if(test != null) {
+			anno = Integer.parseInt(test);
+		}
+		 
 
-		if (genere != null && titolo.isBlank() && anno == 0) {
+		System.err.println(titolo);
+		System.err.println(genere);
+		System.err.println(anno);
 
-			List<String> generi = filmService.findAllGenere();
-			List<Integer> anni = filmService.findAllAnno();
+		if (genere != null && titolo == null && anno == 0) {
 			List<Film> film = filmService.findByGenere(genere);
-			List<String> titoli = filmService.findAllTitoli();
-			
-			request.setAttribute("generi", generi);
-			request.setAttribute("anni", anni);
 			request.setAttribute("film", film);
-			request.setAttribute("titoli", titoli);
 			request.getRequestDispatcher("AllFilm.jsp").forward(request, response);
 		}
 
-		if (titolo != null && genere.isBlank() && anno == 0) {
-
-			List<String> generi = filmService.findAllGenere();
-			List<Integer> anni = filmService.findAllAnno();
+		if (titolo != null && genere == null && anno == 0) {
 			List<Film> film = filmService.findByTitolo(titolo);
-			List<String> titoli = filmService.findAllTitoli();
-			
-			request.setAttribute("generi", generi);
-			request.setAttribute("anni", anni);
 			request.setAttribute("film", film);
-			request.setAttribute("titoli", titoli);
 			request.getRequestDispatcher("AllFilm.jsp").forward(request, response);
 
 		}
 
-		if (anno != 0 && titolo.isBlank() && genere.isBlank()) {
-
-			List<Integer> anni = filmService.findAllAnno();
-			List<String> titoli = filmService.findAllTitoli();
+		if (anno != 0 && titolo == null && genere == null) {
 			List<Film> film = filmService.findByAnno(anno);
-			List<String> generi = filmService.findAllGenere();
-
-			request.setAttribute("anni", anni);
-			request.setAttribute("generi", generi);
-			request.setAttribute("titoli", titoli);
 			request.setAttribute("film", film);
 			request.getRequestDispatcher("AllFilm.jsp").forward(request, response);
 		}
 		
-		if (anno != 0 && genere != null && titolo.isBlank()) {
-			List<Integer> anni = filmService.findAllAnno();
-			List<String> titoli = filmService.findAllTitoli();
+		if (anno != 0 && genere != null && titolo == null) {
 			List<Film> film = filmService.findByAnnoAndGenere(anno,genere);
-			List<String> generi = filmService.findAllGenere();
-
-			request.setAttribute("anni", anni);
-			request.setAttribute("generi", generi);
-			request.setAttribute("titoli", titoli);
 			request.setAttribute("film", film);
 			request.getRequestDispatcher("AllFilm.jsp").forward(request, response);
 		}

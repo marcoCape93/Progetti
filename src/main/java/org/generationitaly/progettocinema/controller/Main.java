@@ -17,7 +17,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		FilmService filmService = new FilmServiceImpl();
 //		List<String> genere = filmRepository.findAll();
-		List<Film> tito = filmService.findByAnnoAndGenere(2022,"azione");
+		List<Film> tito = filmService.findByGenere("Azione");
 		System.out.println(tito);
 
 	}

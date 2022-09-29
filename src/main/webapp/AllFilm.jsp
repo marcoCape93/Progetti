@@ -15,78 +15,51 @@
 	
 	</head>
 <body>
-<<<<<<< HEAD
-	<div>
-		<span style="color: black;"><c:out value="${username}"></c:out></span>
-		<form action="logout" method="post">
-			<button type="submit">Logout</button>
-		</form>
-	</div>
-	<div style="text-align: center">
-		<form action="RicercaServlet" method="get">
-			<label for="anni">Anno</label>
-				<select name="anni">
-				<option value="0"><c:out value="Seleziona.."/></option>
-				<c:forEach items="${anni}" var="f">
-					<option value="${f}">${f}</option>
-				</c:forEach>
-				</select>		
-			<label for="generi">Genere</label>
-				<select name="generi">
-				<option value=""><c:out value="Seleziona.."/></option>
-				<c:forEach items="${generi}" var="f">
-					<option value="${f}">${f}</option>
-				</c:forEach>
-				</select>	
-			<label for="titoli">Titolo</label>
-				<select name="titoli">
-				<option value=""><c:out value="Seleziona.."/></option>
-				<c:forEach items="${titoli}" var="f">
-					<option value="${f}">${f}</option>
-				</c:forEach>
-				</select>
-			<button type="submit">Cerca</button>
-		</form>
-	</div>
-	<table>
-=======
-
-<div class="container-fluid">
-	<div class="row">
-		<div class="col">
-			<span style="color: black;"><c:out value="${username}"></c:out></span>
-			<form action="logout" method="post">
-				<button type="submit">Logout</button>
-			</form>
-		</div>
-		<div class="col">
-			<form action="AnnoFilmServlet" method="get">
-			<label for="anno">Anno</label>
-			<select name="anno">
-				<option>Seleziona..</option>
-				<c:forEach items="${anni}" var="f">
-				<option value="${f}">${f}</option>
-				</c:forEach>
-			</select>
-			<button type="submit">Cerca</button>	
-			</form>
-		</div>	
-		<div class="col">
-			<form action="find-by-genere" method="get">
-			<label for="genere">Genere</label>
-			<select name="genere">
-				<option >Seleziona..</option>
-				<c:forEach items="${generi}" var="f">
-				<option value="${f}">${f}</option>
-				</c:forEach>
-			</select>
-			<button type="submit">Cerca</button>
-			</form>
-		</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<span style="color: black;"><c:out value="${username}"></c:out></span>
+				<form action="logout" method="post">
+					<button type="submit">Logout</button>
+				</form>
+			</div> 	
+		<!--  <div style="margin-top:25px"class="row mt-5px">
+			<form action="RicercaServlet" method="get">
+			<div class="col-lg-4 md-2 sm-2">
+				<label for="anni"></label>
+					<select name="anni">
+					<option value="0">Anno</option>
+					<c:forEach items="${anni}" var="f">
+						<option value="${f}">${f}</option>
+					</c:forEach>
+					</select> RICERCHE 
+				</div>
+				<div class="col-lg-4 md-2 sm-2">			
+				<label for="generi"></label>
+					<select name="generi">
+					<option value="">Genere</option>
+					<c:forEach items="${generi}" var="f">
+						<option value="${f}">${f}</option>
+					</c:forEach>
+					</select>
+				</div>	
+				<div class="col-lg-4 md-1 sm-1">
+				<label for="titoli"></label>
+					<select name="titoli">
+					<option value="">Titolo</option>
+					<c:forEach items="${titoli}" var="f">
+						<option value="${f}">${f}</option>
+					</c:forEach>
+					</select>
+				</div>
+				<div style="margin-left: 90%;;"class="col-lg-4 md-1 sm-1">		
+					<button type="submit">Cerca</button>
+				</div>
+			</form>	
+		</div> -->
 	</div>
 	<div class="col-6">
 	<table class="tabella table table-dark table-striped">
->>>>>>> branch 'master' of https://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@github.com/marcoCape93/Progetto-Cinema.git
 		<thead>
 			<tr>
 				<th></th>
