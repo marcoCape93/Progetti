@@ -1,6 +1,8 @@
 package org.generationitaly.progettocinema.controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,10 +14,10 @@ import org.generationitaly.progettocinema.service.AttoreService;
 import org.generationitaly.progettocinema.service.impl.AttoreServiceImpl;
 
 /**
- * Servlet implementation class FindAttoreCognome
+ * Servlet implementation class FindAllAttori
  */
-@WebServlet("/findCognome-attore")
-public class FindAttoreCognome extends HttpServlet {
+@WebServlet("/tuttiAttori")
+public class FindAllAttori extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private AttoreService attoreService = new AttoreServiceImpl();
@@ -24,11 +26,10 @@ public class FindAttoreCognome extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	String cognome = request.getParameter("cognome");
-	Attore attore = attoreService.findByCognome(cognome);
-	request.setAttribute("attore", attore);
-	request.getRequestDispatcher("schedaAttoreDef.jsp").forward(request, response);
-	
+		List<Attore> listAttori = attoreService.findAll();
+		request.setAttribute("attori", listAttori);
+		
+		request.getRequestDispatcher("AllAttori.jsp").forward(request, response);
 	}
 
 }

@@ -6,22 +6,35 @@
     </button>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Nome del sito</h5>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Ciao nomeUtente </h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <form action="#" method="get">
+          	<input type="hidden" name="#">
+          	<button type="submit" class="btn btn-outline-secondary" style="border-color: white;">Homepage</button>
+            </form>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Lista Film</a>
+          	<form action="tuttiFilm" method="get">
+          	<input type="hidden" name="film">
+          	<button type="submit" class="btn btn-outline-secondary" style="border-color: white;">Lista Film</button>
+            </form>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Lista Attori</a>
+            <form action="tuttiAttori" method="get">
+          	<input type="hidden" name="listAttori">
+          	<button type="submit" class="btn btn-outline-secondary" style="border-color: white;">Lista Attori</button>
+            </form>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./login.jsp">Login/Registrati</a>
+          	<form action="logout" method="post">
+          		<button type="submit" class="btn btn-outline-secondary" name="" style="border-color: white;">
+          		Logout
+          		</button>
+          	</form>
           </li>
         </ul>
         <br>
