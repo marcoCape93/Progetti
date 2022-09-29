@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+body {
+	background:
+		url("https://static.open.online/wp-content/uploads/2022/09/cinema.jpg")
+		no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+#login {
+	padding: 225px 0;
+}
+
+#rettangolo {
+	background-color: white; 
+	margin-left: 35px; 
+	margin-top: 50px; 
+	margin-bottom: 50px; 
+	width: 250px; 
+	position: center; 
+}
+
+@media (min-width:900px) {
+    #rettangolo {
+	background-color: white; 
+	margin-left: 65px; 
+	margin-top: 50px; 
+	margin-bottom: 50px; 
+	width: 300px; 
+	position: center; 
+	}
+}
+
+.button1 {
+	background-color: #B8200A;
+	color: white; 
+}
