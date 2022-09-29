@@ -158,5 +158,21 @@ public class FilmServiceImpl implements FilmService{
 		return film;
 	}
 
+
+	@Override
+	public void update(Film film) {
+		try {
+			PersistenceUtil.beginTransaction();
+			filmRepository.update(film);
+			PersistenceUtil.commitTransaction();
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+			PersistenceUtil.rollbackTransaction();
+		} finally {
+			PersistenceUtil.closeEntityManager();
+		}
+		
+	}
+
 	
 }

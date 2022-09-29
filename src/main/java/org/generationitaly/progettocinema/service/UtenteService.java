@@ -2,6 +2,8 @@ package org.generationitaly.progettocinema.service;
 
 import java.util.List;
 
+import org.generationitaly.progettocinema.entity.Film;
+import org.generationitaly.progettocinema.entity.FilmUtenti;
 import org.generationitaly.progettocinema.entity.Utente;
 
 public interface UtenteService {
@@ -13,4 +15,8 @@ public interface UtenteService {
 	void delete(int id);
 
 	Utente findByUsername(String x);
+	
+	Utente findById(int id);
+	
+	void update(Utente Utente);
 }
