@@ -44,13 +44,14 @@ div {
 
 .poster {
     width: 520px;
-    height: 120vh;
+    height: 100vh;
     overflow: hidden;
+    margin-top: 60px;
 }
 
 .poster img {
     width: 520px;
-    height: 120vh;
+    height: 100vh;
     object-fit: cover;
     overflow: hidden;
     transition: all 1.5s ease-in-out;
