@@ -41,26 +41,26 @@ public class RicercaServlet extends HttpServlet {
 		System.err.println(genere);
 		System.err.println(anno);
 
-		if (genere != null && titolo == null && anno == 0) {
+		if (genere != null && anno == 0) {
 			List<Film> film = filmService.findByGenere(genere);
 			request.setAttribute("film", film);
 			request.getRequestDispatcher("AllFilm.jsp").forward(request, response);
 		}
 
-		if (titolo != null && genere == null && anno == 0) {
+		if (genere == null && anno == 0) {
 			List<Film> film = filmService.findByTitolo(titolo);
 			request.setAttribute("film", film);
 			request.getRequestDispatcher("AllFilm.jsp").forward(request, response);
 
 		}
 
-		if (anno != 0 && titolo == null && genere == null) {
+		if (anno > 0 && genere.isBlank()) {
 			List<Film> film = filmService.findByAnno(anno);
 			request.setAttribute("film", film);
 			request.getRequestDispatcher("AllFilm.jsp").forward(request, response);
 		}
 		
-		if (anno != 0 && genere != null && titolo == null) {
+		if (anno != 0 && !genere.isBlank() && titolo == null) {
 			List<Film> film = filmService.findByAnnoAndGenere(anno,genere);
 			request.setAttribute("film", film);
 			request.getRequestDispatcher("AllFilm.jsp").forward(request, response);

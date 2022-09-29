@@ -21,7 +21,7 @@
 
 <script src="https://unpkg.com/htmlincludejs"></script>
 
-<include src="./navbar.html"></include>
+<include src="./Navbar.jsp"></include>
 
 </head>
 <body style="background-color: white;">
@@ -62,14 +62,14 @@
 		<div class="ricerca1">
 			<div class="row">
 				<div class="col-6">Prima parte</div>
-				<div class="col-6">Seconda parte</div>
+				<!--  <div class="col-6">Seconda parte</div> -->
 			</div>
 		</div>
 
 		<div class="ricerca2">
 			<div class="row">
-				<div class="col-6">Prima parte</div>
-				<div class="col-6">Seconda parte</div>
+			 <!--	<div class="col-6">Prima parte</div> -->
+				  <div class="col-6">Seconda parte</div> 
 			</div>
 		</div>
 
