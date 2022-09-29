@@ -23,7 +23,7 @@
 	   <include src="./navbar.html"></include>
 
 </head>
-<body>
+<body style="background-color: #1E1D1D;">
 	<div class="background-image">
 		<div class="container-fluid">
 			<div class="row">
@@ -59,16 +59,15 @@
 							<div class="header">Filmografia</div>
 							<div class="list" style="margin-top: -20px">
 								<c:forEach items="${attore.filmografia}" var="f">
-									<div class="foto-dati">
-										<div class="foto">
-											<img alt="Locandina per ${f.film.locandina}"
-												src="${f.film.locandina}">
-										</div>
-										<div class="dati">
-											<c:out value="${f.film.titolo}" />
-											(<c:out value="${f.film.anno}" />)
-										</div>
-									</div>
+								<form action="findById-film" method="get">
+									<figure class="figure foto">
+										<input type="hidden" name="id" value="${f.film.id }">
+										<input type="image" src="${f.film.locandina}" value="${f.film.id }" name="id" 
+											alt="Locandina per ${f.film.locandina}" class="figure-img img-fluid rounded">
+										<figcaption class="figure-caption text-center"><c:out value="${f.film.titolo}" />
+											<c:out value="${f.film.anno}" /></figcaption>
+									</figure>
+									</form>
 								</c:forEach>
 							</div>
 						</div>

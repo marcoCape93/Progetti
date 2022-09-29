@@ -78,21 +78,22 @@
 							</div>
 						</div>
 
+							
+
 						<div class="movie-cast">
 							<br>
 							<div class="header">Cast</div>
-							<div class="list" style="margin-top: -20px">
+							<div class="list" style="margin-top: -20px;">
 								<c:forEach items="${film.cast}" var="a">
-									<div class="foto-dati">
-										<div class="foto">
-											<img alt="Locandina per ${attore.foto}"
-												src="${a.attore.foto}">
-										</div>
-										<div class="dati">
-											<c:out value="${a.attore.nome}" />
-											<c:out value="${a.attore.cognome}" />
-										</div>
-									</div>
+									<form action="findById-attore" method="get">
+									<figure class="figure foto">
+										<input type="hidden" name="id" value="${a.attore.id }">
+										<input type="image" src="${a.attore.foto}" value="${a.attore.id }" name="id" 
+											alt="Locandina per ${a.attore.cognome}" class="figure-img img-fluid rounded">
+										<figcaption class="figure-caption text-center"><c:out value="${a.attore.nome}" />
+											<c:out value="${a.attore.cognome}" /></figcaption>
+									</figure>
+									</form>
 								</c:forEach>
 							</div>
 						</div>
