@@ -1,0 +1,165 @@
+<!-- 
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+	font-family: 'Questrial';
+    transition: all 0.35s linear; 
+}
+
+div {
+    display:inline-block;
+    padding:0px;
+    margin-left: 0px;
+  }
+  
+  
+
+/*
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+  }
+
+
+.background-image::after {
+    content: "";
+    background: url(https://www.universalmovies.it/wp-content/uploads/2021/03/avatar-box-office-record.jpg) no-repeat fixed;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  }
+  
+ */ 
+  
+
+/* Locandina */ 
+
+.poster {
+    width: 520px;
+    height: 120vh;
+    overflow: hidden;
+}
+
+.poster img {
+    width: 520px;
+    height: 120vh;
+    object-fit: cover;
+    overflow: hidden;
+    transition: all 1.5s ease-in-out;
+}
+
+.poster img:hover {
+    transform: scale(1.35) rotateZ(5deg);
+}
+
+/* Titolo + dettagli film */ 
+
+.movie-title {
+    font-size: 32px;
+    font-weight: bolder;
+    color: white;
+}
+
+.movie-detail .set {
+    display: inline-block;
+    margin-right: 40px;
+    margin-top: 10px; 
+    color: white;
+}
+
+.movie-detail label {
+    font-size: 11px;
+    color: white;
+    display: block; 
+    font-weight: bold;
+}
+
+.movie-detail span {
+    font-size: 17px;
+    color: white;
+}
+
+.movie-description {
+    line-height: 24px; 
+    margin-right: 24px; 
+    color: white;
+}
+
+/* Movie Cast */
+
+.movie-cast .header {
+    font-size: 24px;
+    margin-bottom: 48px; 
+    color: white;
+}
+
+.movie-cast .list img {
+	width: 80px;
+    height: 130px; 
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid #cccccc;
+}
+
+.movie-cast .set {
+	font-size: 14px; 
+}
+
+.list .attori {
+	color: white; 
+	font-size: 12px; 
+}
+
+/* Mobile */
+#info-film {
+    padding: auto;
+}
+
+/* Tablet */
+@media (min-width:600px) {
+    #info-film {
+        padding: 100px;
+    }
+}
+
+/* Desktop */
+@media (min-width:900px) {
+    #info-film {
+        padding-right: 200px; 
+    }
+}
+
+.list {
+  color: white;
+  display: flex;
+
+}
+
+.foto-dati{
+    display: flex;
+    flex-direction: column;
+    width: 85px;
+    height: 135px;
+    margin: 20px;
+}
+
+.foto{
+    align-items: center;
+}
+
+.dati{
+    text-align: center;
+    font-size: 12px; 
+}
+
+#info-film {
+	margin-top: 40px; 
+}

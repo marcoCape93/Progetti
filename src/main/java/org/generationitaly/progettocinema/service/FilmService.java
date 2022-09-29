@@ -27,4 +27,7 @@ public interface FilmService {
 	List<Film> orderZA();
 
 	List<Film> findByAnnoAndGenere(int anno, String genere);
+
+	void update(Film film);
+
 }
