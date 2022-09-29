@@ -61,18 +61,28 @@
 
 		<div class="ricerca1">
 			<div class="row">
-				<div class="col-6">Prima parte</div>
-				<!--  <div class="col-6">Seconda parte</div> -->
+				<div class="col-6">
+					<h5 id="ricerca-titolo">Film per anno:</h5>
+				</div>
+				<div class="col-6">
+					<h5 id="ricerca-titolo">Film per genere:</h5>
+				</div>
 			</div>
 		</div>
+		
+		<br>
 
 		<div class="ricerca2">
 			<div class="row">
-			 <!--	<div class="col-6">Prima parte</div> -->
-				  <div class="col-6">Seconda parte</div> 
+				<div class="col-6">
+					<h5 id="ricerca-titolo">Film per titolo:</h5>
+				</div>
+				<div class="col-6">
+					<h5 id="ricerca-titolo">Attori per cognome:</h5>
+				</div>
 			</div>
 		</div>
-
+		</div>
 		<br><br>
 		
 			<div class="title-blog" style="background-color: white">
