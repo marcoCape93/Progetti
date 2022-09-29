@@ -21,7 +21,7 @@
 
 <script src="https://unpkg.com/htmlincludejs"></script>
 
-<include src="./Navbar.jsp"></include>
+<include src="./navbar.html"></include>
 
 </head>
 <body style="background-color: white;">
@@ -39,7 +39,7 @@
 			<div class="container text-center" id="products">
 				
 				<a
-					href="https://www.badtaste.it/cinema/articoli/avatar-2-james-cameron-sceneggiatura-scartata/" target="_blank">
+					href="http://localhost:8080/ProgettoCinema/tuttiFilm">
 					<div class="slider"
 						style="background-image: url(https://www.webstaurantstore.com/uploads/seo_category/2021/8/popcorn-header.jpg)">
 						<div class="productInfo">
@@ -47,7 +47,7 @@
 						</div>
 					</div>
 				</a> <a
-					href="https://www.badtaste.it/cinema/articoli/ryan-reynolds-hugh-jackman-wolverine-deadpool-3-data-uscita/" target="_blank">
+					href="http://localhost:8080/ProgettoCinema/tuttiAttori">
 					<div class="slider"
 						style="background-image: url(https://mr.comingsoon.it/imgdb/PrimoPiano/137650_ppl.jpg)">
 						<div class="productInfo">
@@ -58,14 +58,33 @@
 			</div>	
 
 		<br><br>
+		
+		<div class="title-blog" style="background-color: white">
+			<h3 style="text-align: center">🔎 CERCA NEGLI ARCHIVI 🔎</h3>
+			
+			</div>
+			
+		<br>	
 
 		<div class="ricerca1">
 			<div class="row">
 				<div class="col-6">
 					<h5 id="ricerca-titolo">Film per anno:</h5>
+					<form action="RicercaServlet" method="get" class="d-flex"
+				role="search">
+				<input name="anni" class="form-control me-2" type="text"
+					placeholder="Cerca..." aria-label="Cerca...">
+				<button class="btn btn-outline-success" type="submit">Cerca</button>
+			</form>
 				</div>
 				<div class="col-6">
 					<h5 id="ricerca-titolo">Film per genere:</h5>
+					<form action="RicercaServlet" method="get" class="d-flex"
+				role="search">
+				<input name="generi" class="form-control me-2" type="text"
+					placeholder="Cerca..." aria-label="Cerca...">
+				<button class="btn btn-outline-success" type="submit">Cerca</button>
+			</form>
 				</div>
 			</div>
 		</div>
@@ -76,9 +95,21 @@
 			<div class="row">
 				<div class="col-6">
 					<h5 id="ricerca-titolo">Film per titolo:</h5>
+					<form action="RicercaServlet" method="get" class="d-flex"
+				role="search">
+				<input name="titoli" class="form-control me-2" type="text"
+					placeholder="Cerca..." aria-label="Cerca...">
+				<button class="btn btn-outline-success" type="submit">Cerca</button>
+			</form>
 				</div>
 				<div class="col-6">
 					<h5 id="ricerca-titolo">Attori per cognome:</h5>
+					<form action="findCognome-attore" method="get" class="d-flex"
+					role="search">
+					<input name="cognome" class="form-control me-2" type="text"
+						placeholder="Cerca..." aria-label="Cerca...">
+					<button class="btn btn-outline-success" type="submit">Cerca</button>
+				</form>
 				</div>
 			</div>
 		</div>
@@ -86,7 +117,7 @@
 		<br><br>
 		
 			<div class="title-blog" style="background-color: white">
-			<h3 style="text-align: center">🎬 Le news del momento 🎬</h3>
+			<h3 style="text-align: center">🎬 LE NEWS DEL MOMENTO 🎬</h3>
 			
 			</div>
 			
