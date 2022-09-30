@@ -26,7 +26,7 @@ public class FindAllAttori extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Attore> listAttori = attoreService.findAll();
+		List<Attore> listAttori = attoreService.orderAZ();
 		request.setAttribute("attori", listAttori);
 		
 		request.getRequestDispatcher("AllAttori.jsp").forward(request, response);
