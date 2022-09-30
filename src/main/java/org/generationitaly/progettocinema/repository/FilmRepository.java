@@ -21,6 +21,8 @@ public interface FilmRepository extends CrudRepository<Film, Integer>{
 	List<Film> orderAZ();
 	
 	List<Film> orderZA();
+	
+	List<Film> orderByAnno();
 
 	List<Film> findByAnnoAndGenere(int anno,String genere);
 	

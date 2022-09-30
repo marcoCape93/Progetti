@@ -57,6 +57,12 @@ public class FilmRepositoryImpl extends CrudRepositoryImpl<Film,Integer> impleme
 	}
 	
 	@Override
+	public List<Film> orderByAnno() {
+		EntityManager em = PersistenceUtil.getEntityManager();
+		return em.createQuery("select a from Film a order by anno", Film.class).getResultList();		
+	}
+	
+	@Override
 	public List<Film> findByTitolo(String titolo) {
 		EntityManager em = PersistenceUtil.getEntityManager();
 		return em.createQuery("select a from Film a where a.titolo LIKE concat('%',:titolo,'%')", Film.class).setParameter("titolo", titolo).getResultList();
@@ -67,4 +73,6 @@ public class FilmRepositoryImpl extends CrudRepositoryImpl<Film,Integer> impleme
 		EntityManager em = PersistenceUtil.getEntityManager();
 		return em.createQuery("select a from Film a where a.genere=:genere and a.anno=:anno", Film.class).setParameter("anno", anno).setParameter("genere", genere).getResultList();
 	}
+
+	
 }
