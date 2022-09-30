@@ -16,53 +16,20 @@
 	</head>
 <body style="background-color: #1E1D1D">
 
-<br><br><br>
 <div class="container-fluid">
-<%-- 	<div class="row">
-		<div class="col">
-			<span style="color: black;"><c:out value="${username}"></c:out></span>
-			<form action="logout" method="post">
-				<button type="submit">Logout</button>
-			</form>
-		</div>
-		<div class="col">
-			<form action="AnnoFilmServlet" method="get">
-			<label for="anno">Anno</label>
-			<select name="anno">
-				<option>Seleziona..</option>
-				<c:forEach items="${anni}" var="f">
-				<option value="${f}">${f}</option>
-				</c:forEach>
-			</select>
-			<button type="submit">Cerca</button>	
-			</form>
-		</div>	
-		<div class="col">
-			<form action="find-by-genere" method="get">
-			<label for="genere">Genere</label>
-			<select name="genere">
-				<option >Seleziona..</option>
-				<c:forEach items="${generi}" var="f">
-				<option value="${f}">${f}</option>
-				</c:forEach>
-			</select>
-			<button type="submit">Cerca</button>
-			</form>
-		</div>
-	</div> --%>
+
+<div class="space">
 	
-	<div class="row justify-content-center">
-	
-	<div class="col-6">
-	
-	<table class="tabella table table-dark table-striped" >
+	<div class="row text-center">
+	<div class="col">
+	<table class="tabella table table-dark table-striped" style="margin-top: 60px">
 		<thead>
 			<tr>
 				<th></th>
 				<th>Nome</th>
 				<th>Cognome</th>
-				<th>Data di nascita</th>
-				<th>Luogo di nascita</th>
+				<th>Nascita</th>
+				<th>Nazione</th>
 				
 				
 				<!-- <th>filmografia</th> -->
@@ -75,6 +42,7 @@
 					<td>
 							<form action="findById-attore" method="get">
 							<input type="hidden" name="id" value="${a.id}">
+							<input type="hidden" name="idUtente" value="${utente.id }">
 							
 							<div class="foto">
 								<input type="image" src="${a.foto}" value="${a.id}" name="id" alt="Foto per ${a.nome} ${a.cognome}">
@@ -94,6 +62,7 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	</div>
 	</div>
 	</div>
 	</div>

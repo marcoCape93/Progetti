@@ -16,14 +16,51 @@
     color: white; 
 }
 
-.foto{
+.foto {
 	display: flex;
     flex-direction: column;
     width: 150px;
     height: 210px;
-
 }
+
 
 .riga{
 	height: 250px;
 }
+
+    /* Smartphone */
+@media (min-width:300px) {
+	.row {
+	position: absolute;
+	margin-top: 50%; 
+	margin-left: 50%; 
+	margin-right: -50%; 
+    }
+}
+
+    /* Desktop */
+@media (min-width:900px) {
+	.row {
+	position: absolute;
+	margin-top: 50%;
+	margin-left: 50%; 
+	margin-right: -50%;  
+    }
+}
+
+    /* Smartphone */
+@media (min-width:300px) {
+.space {
+	margin-top: 30px; 
+	margin-left: 0; 
+}
+}
+
+    /* Smartphone */
+@media (min-width:900px) {
+.space {
+	margin-top: 30px; 
+	margin-left: 27.5%; 
+}
+}
+

@@ -14,14 +14,19 @@
 	integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
 	crossorigin="anonymous">
 <script src="https://unpkg.com/htmlincludejs"></script>
-<include src="./navbar.html"></include>
+
 
 </head>
 <body style="background-color: #1E1D1D">
-	<div class="container-fluid">
 
-	<div class="row justify-content-center">
-		<div class="col-6">
+	<include src="./navbar.html"></include>
+
+	<div class="container-fluid">
+	
+	<div class="space">
+
+	<div class="row text-center">
+		<div class="col">
 			<table class="tabella table table-dark table-striped" style="margin-top: 60px">
 				<thead>
 					<tr>
@@ -57,6 +62,7 @@
 					</c:forEach>
 				</tbody>
 			</table>
+		</div>
 		</div>
 	</div>
 </div>
