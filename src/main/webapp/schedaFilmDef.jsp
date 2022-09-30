@@ -76,26 +76,30 @@
 							</div>
 							<br>
 							<div class="wrapper " style="background-color: #1E1D1D">
-		<h3 style="color: white">Vota il film</h3>
+								<h3 style="color: white">Vota il film</h3>
+								<div class="txt-center">
+  <form action="AddVoto" method="post">
+  		<input type="hidden" name="id-utente" value="${utente.id }">	
+  		<input type="hidden" name="id-film" value="${film.id }">
+        <div class="rating">
+            <input id="star5" name="voto" type="radio" value="5" class="radio-btn hide" />
+            <label for="star5" >☆</label>
+            <input id="star4" name="voto" type="radio" value="4" class="radio-btn hide" />
+            <label for="star4" >☆</label>
+            <input id="star3" name="voto" type="radio" value="3" class="radio-btn hide" />
+            <label for="star3" >☆</label>
+            <input id="star2" name="voto" type="radio" value="2" class="radio-btn hide" />
+            <label for="star2" >☆</label>
+            <input id="star1" name="voto" type="radio" value="1" class="radio-btn hide" />
+            <label for="star1" >☆</label>
+            <div class="clear"></div>
+        </div>
+        <button type="submit">voto</button>
+    </form>
+</div>
 		
-		<form action="AddVoto" method="post">
-			<div class="rating">
-			<input type="hidden" name="id-film" value="1">
-			<input type="hidden" name="id-utente" value="${utente.id }">
-				
-				<i class='bx bx-star star' style="--i: 0;"></i>
-				<i class='bx bx-star star' style="--i: 1;"></i>
-				<i class='bx bx-star star' style="--i: 2;"></i>
-				<i class='bx bx-star star' style="--i: 3;"></i>
-				<i class='bx bx-star star' style="--i: 4;"></i>
-			<div class="btn-group">
-				<button type="submit" class="btn submit">Submit</button>
-				<button class="btn cancel">Cancel</button>
-			</div>
-			</div>
-		</form>
 		
-	</div>
+							</div>
 							<br>
 							
 							<br>
