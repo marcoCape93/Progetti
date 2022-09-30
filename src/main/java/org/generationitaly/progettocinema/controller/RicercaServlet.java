@@ -36,7 +36,6 @@ public class RicercaServlet extends HttpServlet {
 			anno = Integer.parseInt(test);
 		}
 		 
-
 		System.err.println(titolo);
 		System.err.println(genere);
 		System.err.println(anno);

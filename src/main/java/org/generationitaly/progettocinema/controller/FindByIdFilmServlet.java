@@ -31,11 +31,11 @@ public class FindByIdFilmServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
-		int idUtente=Integer.parseInt(request.getParameter("idUtente"));
-		Film film = filmService.findById(id);
+		int idUtente =  Integer.parseInt(request.getParameter("idUtente"));
 		Utente utente=utenteService.findById(idUtente);
-		request.setAttribute("film", film);
 		request.setAttribute("utente", utente);
+		Film film = filmService.findById(id);
+		request.setAttribute("film", film);
 		request.getRequestDispatcher("schedaFilmDef.jsp").forward(request, response);
 		
 	}

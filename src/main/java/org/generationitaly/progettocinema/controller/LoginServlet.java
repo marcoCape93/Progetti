@@ -49,7 +49,7 @@ public class LoginServlet extends HttpServlet {
 				session.setAttribute("utente", u);
 				response.sendRedirect("tuttiFilm");
 			}else{
-				request.getRequestDispatcher("login.jsp").forward(request, response);
+				request.getRequestDispatcher("home-page.jsp").forward(request, response);
 			}
 	}
 }
