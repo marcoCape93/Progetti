@@ -8,8 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.generationitaly.progettocinema.entity.Attore;
+import org.generationitaly.progettocinema.entity.Utente;
 import org.generationitaly.progettocinema.service.AttoreService;
+import org.generationitaly.progettocinema.service.UtenteService;
 import org.generationitaly.progettocinema.service.impl.AttoreServiceImpl;
+import org.generationitaly.progettocinema.service.impl.UtenteServiceImpl;
 
 /**
  * Servlet implementation class FindByIdAttoreServlet
@@ -19,12 +22,22 @@ public class FindByIdAttoreServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private AttoreService attoreService = new AttoreServiceImpl();
-	
+	private UtenteService utenteService = new UtenteServiceImpl();
+
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
+		String tmp = request.getParameter("idUtente");
+		int idUtente = 0;
+		if (!tmp.isBlank()) {
+			idUtente = Integer.parseInt(tmp);
+			Utente utente = utenteService.findById(idUtente);
+			request.setAttribute("utente", utente);
+		}
 		Attore attore = attoreService.findById(id);
 		request.setAttribute("attore", attore);
 		request.getRequestDispatcher("schedaAttoreDef.jsp").forward(request, response);

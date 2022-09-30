@@ -38,23 +38,23 @@
 
 			<div class="container text-center" id="products">
 				
-				<a
-					href="http://localhost:8080/ProgettoCinema/tuttiFilm">
+				<form action="tuttiFilm" method="get">
+					<input type="hidden" name="id" value="${utente.id }">
 					<div class="slider"
 						style="background-image: url(https://www.webstaurantstore.com/uploads/seo_category/2021/8/popcorn-header.jpg)">
 						<div class="productInfo">
-							<p class="productText">Archivio Film</p>
+							<button type="submit" class="productText" >Archivio Film</button>
 						</div>
 					</div>
-				</a> <a
-					href="http://localhost:8080/ProgettoCinema/tuttiAttori">
+				</form> <form action="tuttiAttori" method="get">
+					<input type="hidden" name="id" value="${utente.id }">
 					<div class="slider"
 						style="background-image: url(https://mr.comingsoon.it/imgdb/PrimoPiano/137650_ppl.jpg)">
 						<div class="productInfo">
-							<p class="productText">Archivio Attori</p>
+							<button type="submit"  class="productText" style="">Archivio Attori</button>
 						</div>
 					</div>
-				</a> 
+				</form> 
 			</div>	
 
 		<br><br>
@@ -170,5 +170,11 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
 		crossorigin="anonymous"></script>
+		<script type="text/javascript">
+		
+		
+			
+		
+		</script>
 </body>
 </html>

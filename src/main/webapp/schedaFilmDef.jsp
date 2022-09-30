@@ -15,15 +15,16 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
-	crossorigin="anonymous"/>
+	crossorigin="anonymous" />
 
 <link href='https://fonts.googleapis.com/css?family=Questrial'
 	rel='stylesheet'>
-	
-	   <script src="https://unpkg.com/htmlincludejs"></script>
-	   
-	   <include src="./navbar.html"></include>
-<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+<script src="https://unpkg.com/htmlincludejs"></script>
+
+<include src="./navbar.html"></include>
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'
+	rel='stylesheet'>
 </head>
 <body style="background-color: #1E1D1D;">
 
@@ -78,38 +79,36 @@
 							<div class="wrapper " style="background-color: #1E1D1D">
 								<h3 style="color: white">Vota il film</h3>
 								<div class="txt-center">
-  <form action="AddVoto" method="post">
-  		<input type="hidden" name="id-utente" value="${utente.id }">	
-  		<input type="hidden" name="id-film" value="${film.id }">
-        <div class="rating">
-            <input id="star5" name="voto" type="radio" value="5" class="radio-btn hide" />
-            <label for="star5" >☆</label>
-            <input id="star4" name="voto" type="radio" value="4" class="radio-btn hide" />
-            <label for="star4" >☆</label>
-            <input id="star3" name="voto" type="radio" value="3" class="radio-btn hide" />
-            <label for="star3" >☆</label>
-            <input id="star2" name="voto" type="radio" value="2" class="radio-btn hide" />
-            <label for="star2" >☆</label>
-            <input id="star1" name="voto" type="radio" value="1" class="radio-btn hide" />
-            <label for="star1" >☆</label>
-            <div class="clear"></div>
-        </div>
-        <button type="submit">voto</button>
-    </form>
-</div>
-		
-		
+									<form action="AddVoto" method="post">
+										<input type="hidden" name="id-utente" value="${utente.id}">
+										<input type="hidden" name="id-film" value="${film.id }">
+										<div class="rating">
+											<input id="star5" name="voto" type="radio" value="5"
+												class="radio-btn hide" /> <label for="star5">☆</label> <input
+												id="star4" name="voto" type="radio" value="4"
+												class="radio-btn hide" /> <label for="star4">☆</label> <input
+												id="star3" name="voto" type="radio" value="3"
+												class="radio-btn hide" /> <label for="star3">☆</label> <input
+												id="star2" name="voto" type="radio" value="2"
+												class="radio-btn hide" /> <label for="star2">☆</label> <input
+												id="star1" name="voto" type="radio" value="1"
+												class="radio-btn hide" /> <label for="star1">☆</label>
+											<div class="clear"></div>
+										</div>
+										<button type="submit" >voto</button>
+									</form>
+								</div>
+
+
 							</div>
-							<br>
-							
-							<br>
+							<br> <br>
 							<div class="set">
 								<label>Descrizione</label> <span><c:out
 										value="${film.descrizione}" /></span>
 							</div>
 						</div>
 
-							
+
 
 						<div class="movie-cast">
 							<br>
@@ -117,15 +116,20 @@
 							<div class="list" style="margin-top: -20px;">
 								<c:forEach items="${film.cast}" var="a">
 									<form action="findById-attore" method="get">
-									<figure class="figure foto">
-										<input type="hidden" name="id" value="${a.attore.id }">
-										<div class="fotoprova">
-											<input type="image" src="${a.attore.foto}" value="${a.attore.id }" name="id" 
-											alt="Locandina per ${a.attore.cognome}" class="figure-img img-fluid rounded">
-										</div>
-										<figcaption class="figure-caption text-center"><c:out value="${a.attore.nome}" />
-											<c:out value="${a.attore.cognome}" /></figcaption>
-									</figure>
+										<figure class="figure foto">
+											<input type="hidden" name="id" value="${a.attore.id }">
+											<input type="hidden" name="idUtente" value="${utente.id }">
+											<div class="fotoprova">
+												<input type="image" src="${a.attore.foto}"
+													value="${a.attore.id }" name="id"
+													alt="Locandina per ${a.attore.cognome}"
+													class="figure-img img-fluid rounded">
+											</div>
+											<figcaption class="figure-caption text-center">
+												<c:out value="${a.attore.nome}" />
+												<c:out value="${a.attore.cognome}" />
+											</figcaption>
+										</figure>
 									</form>
 								</c:forEach>
 							</div>
@@ -139,7 +143,7 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
 		crossorigin="anonymous"></script>
-		<script type="text/javascript">
+	<script type="text/javascript">
 		const allStar = document.querySelectorAll('.rating .star')
 		const ratingValue = document.querySelector('.rating input')
 
@@ -163,6 +167,7 @@
 				}
 			})
 		})
+		
 		
 		</script>
 </body>

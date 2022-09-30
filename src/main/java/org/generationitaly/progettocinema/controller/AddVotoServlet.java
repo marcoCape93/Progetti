@@ -25,37 +25,19 @@ public class AddVotoServlet extends HttpServlet {
 	UtenteService utenteService = new UtenteServiceImpl();
 	FilmService filmService = new FilmServiceImpl();
 
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		int idUtente=Integer.parseInt(request.getParameter("id-utente"));
-//		int idFilm=Integer.parseInt(request.getParameter("id-film"));
-//		int voto=Integer.parseInt(request.getParameter("voto"));
-//		double media=0;
-//		Film film=filmService.findById(idFilm);
-//		FilmUtenti filmUtenti=new FilmUtenti();
-//		filmUtenti.setFilm(filmService.findById(idFilm));
-//		filmUtenti.setUtente(utenteService.findById(idUtente));
-//		filmUtenti.setVoto(voto);
-//		filmUtentiService.save(filmUtenti);
-//		media=filmUtentiService.FindAvgVoto(idFilm);
-//		film.setVoto((int) media);
-//		filmService.update(film);
-//		
-//			
-//			request.getRequestDispatcher("ProvaVoto.jsp").forward(request, response);
-//	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		int idUtente = Integer.parseInt(request.getParameter("id-utente"));
+		String tmp = request.getParameter("id-utente");
+		if(tmp.isEmpty()) {
+			 response.sendRedirect("login.jsp");	   
+		}else {
+		int idUtente=Integer.parseInt(tmp);
 		int idFilm = Integer.parseInt(request.getParameter("id-film"));
 		int voto = Integer.parseInt(request.getParameter("voto"));
 		double media = 0;
-		System.out.println("IDFILM"+idFilm);
-		System.out.println("IDUtente"+idUtente);
-		System.out.println("VOTO"+voto);
 		Utente utente = utenteService.findById(idUtente);
 		FilmUtenti filmUtenti = filmUtentiService.FindByIdUtenteIdFilm(idUtente, idFilm);
-		System.out.println(filmUtenti);
 		Film film = filmService.findById(idFilm);
 		filmUtenti.setVoto(voto);
 		filmUtentiService.update(filmUtenti);
@@ -65,6 +47,7 @@ public class AddVotoServlet extends HttpServlet {
 		request.setAttribute("film", film);
 		request.setAttribute("utente", utente);
 		request.getRequestDispatcher("schedaFilmDef.jsp").forward(request, response);
+		}
 	}
 
 }

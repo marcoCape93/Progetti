@@ -62,6 +62,7 @@
 								<form action="findById-film" method="get">
 									<figure class="figure foto">
 										<input type="hidden" name="id" value="${f.film.id }">
+										<input type="hidden" name="idUtente" value="${utente.id }">
 										<div class="fotofilm">
 												<input type="image" src="${f.film.locandina}" value="${f.film.id }" name="id" 
 												alt="Locandina per ${f.film.locandina}" class="figure-img img-fluid rounded">
