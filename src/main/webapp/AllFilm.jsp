@@ -19,16 +19,10 @@
 </head>
 <body style="background-color: #1E1D1D">
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col">
-				
-			</div>
-		</div>
-	</div>
+
 	<div class="row justify-content-center">
 		<div class="col-6">
-			<table class="tabella table table-dark table-striped"></table>
-			<table class="tabella table table-dark table-striped">
+			<table class="tabella table table-dark table-striped" style="margin-top: 60px">
 				<thead>
 					<tr>
 						<th></th>
@@ -65,7 +59,7 @@
 			</table>
 		</div>
 	</div>
-
+</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"

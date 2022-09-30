@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.generationitaly.progettocinema.entity.Film;
 import org.generationitaly.progettocinema.entity.FilmUtenti;
+import org.generationitaly.progettocinema.entity.Utente;
 import org.generationitaly.progettocinema.service.FilmService;
 import org.generationitaly.progettocinema.service.FilmUtentiService;
 import org.generationitaly.progettocinema.service.UtenteService;
@@ -49,7 +50,12 @@ public class AddVotoServlet extends HttpServlet {
 		int idFilm = Integer.parseInt(request.getParameter("id-film"));
 		int voto = Integer.parseInt(request.getParameter("voto"));
 		double media = 0;
+		System.out.println("IDFILM"+idFilm);
+		System.out.println("IDUtente"+idUtente);
+		System.out.println("VOTO"+voto);
+		Utente utente = utenteService.findById(idUtente);
 		FilmUtenti filmUtenti = filmUtentiService.FindByIdUtenteIdFilm(idUtente, idFilm);
+		System.out.println(filmUtenti);
 		Film film = filmService.findById(idFilm);
 		filmUtenti.setVoto(voto);
 		filmUtentiService.update(filmUtenti);
@@ -57,6 +63,7 @@ public class AddVotoServlet extends HttpServlet {
 		film.setVoto((int) media);
 		filmService.update(film);
 		request.setAttribute("film", film);
+		request.setAttribute("utente", utente);
 		request.getRequestDispatcher("schedaFilmDef.jsp").forward(request, response);
 	}
 
