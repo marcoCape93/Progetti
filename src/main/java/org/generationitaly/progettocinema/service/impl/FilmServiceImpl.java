@@ -14,11 +14,11 @@ public class FilmServiceImpl implements FilmService{
 	
 	
 	@Override
-	public List<Film> findAll() {
+	public List<Film> findAll() {  // Default ordinato A-Z
 		List<Film> film = null;
 		try {
 			PersistenceUtil.beginTransaction();
-			film = filmRepository.findAll();
+			film = filmRepository.orderAZ();
 			PersistenceUtil.commitTransaction();
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
