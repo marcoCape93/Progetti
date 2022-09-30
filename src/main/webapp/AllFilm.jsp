@@ -19,7 +19,7 @@
 </head>
 <body style="background-color: #1E1D1D">
 
-	<include src="./navbar.html"></include>
+	<%@include file="./navbarDef.jsp" %>
 
 	<div class="container-fluid">
 	

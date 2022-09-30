@@ -36,14 +36,14 @@ public class RegistrationServlet extends HttpServlet {
 		boolean hasErrors = false;
 		Utente u = utenteService.findByUsername(username);
 
-		if(u.getUsername().equals(username)) {
-			request.setAttribute("errUser2", "Già in uso");
-			hasErrors = true;
-		}
-		if(u.getEmail().equals(mail)) {
-			request.setAttribute("errGmail2", "Già in uso");
-			hasErrors = true;
-		}
+//		if(u.getUsername().equals(username)) {
+//			request.setAttribute("errUser2", "Già in uso");
+//			hasErrors = true;
+//		}
+//		if(u.getEmail().equals(mail)) {
+//			request.setAttribute("errGmail2", "Già in uso");
+//			hasErrors = true;
+//		}
 
 		if (mail.isBlank()) {
 			request.setAttribute("errMail", "Campo obbligatori");

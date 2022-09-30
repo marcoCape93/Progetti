@@ -21,11 +21,11 @@
 
 <script src="https://unpkg.com/htmlincludejs"></script>
 
-<include src="./navbarHomePage.html"></include>
+
 
 </head>
 <body style="background-color: white;">
-
+	<%@include file="./navbarHomeDef.jsp" %>
 	<br>
 	<br>
 	<br>
