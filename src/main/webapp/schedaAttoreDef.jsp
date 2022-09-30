@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -20,10 +20,11 @@
 	
 	   <script src="https://unpkg.com/htmlincludejs"></script>
 	   
-	   <include src="./navbar.html"></include>
+	   
 
 </head>
 <body style="background-color: #1E1D1D;">
+<%@include file="./navbarDef.jsp" %>
 	<div class="background-image">
 		<div class="container-fluid">
 			<div class="row">

@@ -28,10 +28,11 @@ public class AddVotoServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		String tmp = request.getParameter("id-utente");
 		if(tmp.isEmpty()) {
-			 response.sendRedirect("login.jsp");	   
-		}else {
+			response.sendRedirect("login.jsp");
+		}
 		int idUtente=Integer.parseInt(tmp);
 		int idFilm = Integer.parseInt(request.getParameter("id-film"));
 		int voto = Integer.parseInt(request.getParameter("voto"));
@@ -47,7 +48,6 @@ public class AddVotoServlet extends HttpServlet {
 		request.setAttribute("film", film);
 		request.setAttribute("utente", utente);
 		request.getRequestDispatcher("schedaFilmDef.jsp").forward(request, response);
-		}
 	}
 
 }

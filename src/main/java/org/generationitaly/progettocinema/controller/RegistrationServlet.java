@@ -34,7 +34,7 @@ public class RegistrationServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		boolean hasErrors = false;
-		Utente u = utenteService.findByUsername(username);
+//		Utente u = utenteService.findByUsername(username);
 
 //		if(u.getUsername().equals(username)) {
 //			request.setAttribute("errUser2", "Già in uso");

@@ -1,5 +1,5 @@
 <%@page import="org.generationitaly.progettocinema.entity.Utente"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -22,13 +22,13 @@
 
 <script src="https://unpkg.com/htmlincludejs"></script>
 
-<include src="./navbar.html"></include>
+
 <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'
 	rel='stylesheet'>
 </head>
 <body style="background-color: #1E1D1D;">
-
-
+ 
+<%@include file="./navbarDef.jsp" %>
 	<!-- commento -->
 	<div class="background-image">
 		<div class="container-fluid">
@@ -80,8 +80,13 @@
 								<h3 style="color: white">Vota il film</h3>
 								<div class="txt-center">
 									<form action="AddVoto" method="post">
+									<c:if test="${empty utente.id}">
+										<h6 style="color: red">Devi essere registrato per votare</h6>
+										</c:if>
+										<c:if test="${not empty utente.id}">
 										<input type="hidden" name="id-utente" value="${utente.id}">
 										<input type="hidden" name="id-film" value="${film.id }">
+										
 										<div class="rating">
 											<input id="star5" name="voto" type="radio" value="5"
 												class="radio-btn hide" /> <label for="star5">☆</label> <input
@@ -95,7 +100,10 @@
 												class="radio-btn hide" /> <label for="star1">☆</label>
 											<div class="clear"></div>
 										</div>
+										
+										
 										<button type="submit" >voto</button>
+										</c:if>
 									</form>
 								</div>
 
@@ -170,5 +178,6 @@
 		
 		
 		</script>
+		
 </body>
 </html>

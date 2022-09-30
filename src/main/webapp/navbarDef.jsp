@@ -10,10 +10,18 @@
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+        	<c:if test="${empty utente}">
         	<span style="color: black;">
-        	Ciao
-        	<c:out value="${sessionScope.utente.nome}"></c:out>
+        		 <a href="registrationDef.jsp">Non sei registrato?</a>
         	</span>
+        	</c:if>
+        	<c:if test="${not empty utente }">
+       		<span style="color: black;">
+        	Ciao 
+        	<c:out value="${sessionScope.utente.nome}"></c:out>
+        	!
+        	</span>
+        	</c:if>
 				
          </h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
