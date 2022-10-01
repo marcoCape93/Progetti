@@ -31,13 +31,13 @@ public class FindByIdAttoreServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
-		String tmp = request.getParameter("idUtente");
-		int idUtente = 0;
-		if (!tmp.isBlank()) {
-			idUtente = Integer.parseInt(tmp);
-			Utente utente = utenteService.findById(idUtente);
-			request.setAttribute("utente", utente);
-		}
+//		String tmp = request.getParameter("idUtente");
+//		int idUtente = 0;
+//		if (!tmp.isBlank()) {
+//			idUtente = Integer.parseInt(tmp);
+//			Utente utente = utenteService.findById(idUtente);
+//			request.setAttribute("utente", utente);
+//		}
 		Attore attore = attoreService.findById(id);
 		request.setAttribute("attore", attore);
 		request.getRequestDispatcher("schedaAttoreDef.jsp").forward(request, response);

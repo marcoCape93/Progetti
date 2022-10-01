@@ -66,16 +66,17 @@
 			<div class="row">
 				<div class="col lg-6 sm-4">
 					<h5 id="ricerca-titolo">Film per anno:</h5>
-					<form action="RicercaServlet" method="get" class="d-flex"
+					<form action="FindByAnnoServlet" method="get" class="d-flex"
 				role="search">
 				<input name="anni" class="form-control me-2" type="text"
 					placeholder="Cerca..." aria-label="Cerca...">
+					
 				<button class="btn btn-outline-success" type="submit">Cerca</button>
 			</form>
 				</div>
 				<div class="col lg-6 sm-4">
 					<h5 id="ricerca-titolo">Film per genere:</h5>
-					<form action="RicercaServlet" method="get" class="d-flex"
+					<form action="FindByGenereServlet" method="get" class="d-flex"
 				role="search">
 				<input name="generi" class="form-control me-2" type="text"
 					placeholder="Cerca..." aria-label="Cerca...">
@@ -91,7 +92,7 @@
 			<div class="row">
 				<div class="col lg-6 sm-4">
 					<h5 id="ricerca-titolo">Film per titolo:</h5>
-					<form action="RicercaServlet" method="get" class="d-flex"
+					<form action="FindByTitoloServlet" method="get" class="d-flex"
 				role="search">
 				<input name="titoli" class="form-control me-2" type="text"
 					placeholder="Cerca..." aria-label="Cerca...">

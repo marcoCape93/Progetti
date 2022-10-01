@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <nav class="navbar bg-light fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="./home-page.jsp">moviespace</a>
@@ -47,16 +47,25 @@
             </form>
           </li>
           <li class="nav-item">
+          <c:if test="${empty utente}">
+        	<form action="login.jsp" method="post">
+          		<button type="submit" class="btn btn-outline-secondary" name="" style="border-color: white;">
+          		Login
+          		</button>
+          	</form>
+        	</c:if>
+          <c:if test="${not empty utente }">
           	<form action="logout" method="post">
           		<button type="submit" class="btn btn-outline-secondary" name="" style="border-color: white;">
           		Logout
           		</button>
           	</form>
+          	</c:if>
           </li>
         </ul>
         <br>
         <h5 id="ricerca-titolo">Ricerca film per anno:</h5>
-					<form action="RicercaServlet" method="get" class="d-flex"
+					<form action="FindByAnnoServlet" method="get" class="d-flex"
 				role="search">
 				<input name="anni" class="form-control me-2" type="text"
 					placeholder="Cerca..." aria-label="Cerca...">
@@ -64,7 +73,7 @@
 			</form>
 			<br>
 			<h5 id="ricerca-titolo">Ricerca film per genere:</h5>
-					<form action="RicercaServlet" method="get" class="d-flex"
+					<form action="FindByGenereServlet" method="get" class="d-flex"
 				role="search">
 				<input name="generi" class="form-control me-2" type="text"
 					placeholder="Cerca..." aria-label="Cerca...">
@@ -72,7 +81,7 @@
 			</form>
 			<br>
 			<h5 id="ricerca-titolo">Ricerca film per titolo:</h5>
-					<form action="RicercaServlet" method="get" class="d-flex"
+					<form action="FindByTitoloServlet" method="get" class="d-flex"
 				role="search">
 				<input name="titoli" class="form-control me-2" type="text"
 					placeholder="Cerca..." aria-label="Cerca...">

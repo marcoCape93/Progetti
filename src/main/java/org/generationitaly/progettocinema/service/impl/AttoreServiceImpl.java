@@ -47,8 +47,8 @@ public class AttoreServiceImpl implements AttoreService {
 	}
 
 	@Override
-	public Attore findByCognome(String cognome) {
-		Attore attore = null;
+	public List<Attore> findByCognome(String cognome) {
+		List<Attore> attore = null;
 		try {
 			PersistenceUtil.beginTransaction();
 			attore = attoreRepository.findByCognome(cognome);

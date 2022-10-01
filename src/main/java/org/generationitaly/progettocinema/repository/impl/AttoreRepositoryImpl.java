@@ -17,9 +17,9 @@ public class AttoreRepositoryImpl extends CrudRepositoryImpl<Attore,Integer> imp
 	}
 
 	@Override
-	public Attore findByCognome(String cognome) {
+	public List<Attore> findByCognome(String cognome) {
 		EntityManager em = PersistenceUtil.getEntityManager();
-		return em.createQuery("select a from Attore a where a.cognome=:cognome", Attore.class).setParameter("cognome", cognome).getSingleResult();
+		return em.createQuery("select a from Attore a where a.cognome=:cognome", Attore.class).setParameter("cognome", cognome).getResultList();
 	}
 	
 	@Override

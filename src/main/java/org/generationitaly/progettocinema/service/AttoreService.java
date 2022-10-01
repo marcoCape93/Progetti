@@ -10,7 +10,7 @@ public interface AttoreService {
 	
 	Attore findById(int id);
 
-	Attore findByCognome(String cognome);
+	List<Attore> findByCognome(String cognome);
 
 	List<Attore> orderAZ();
 	

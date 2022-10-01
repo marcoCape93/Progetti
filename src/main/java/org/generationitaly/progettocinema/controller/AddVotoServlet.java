@@ -6,7 +6,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.generationitaly.progettocinema.entity.Film;
 import org.generationitaly.progettocinema.entity.FilmUtenti;
 import org.generationitaly.progettocinema.entity.Utente;
@@ -27,13 +26,8 @@ public class AddVotoServlet extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		
-		String tmp = request.getParameter("id-utente");
-		if(tmp.isEmpty()) {
-			response.sendRedirect("login.jsp");
-		}
-		int idUtente=Integer.parseInt(tmp);
+			throws ServletException, IOException {	
+		int idUtente=Integer.parseInt(request.getParameter("id-utente"));
 		int idFilm = Integer.parseInt(request.getParameter("id-film"));
 		int voto = Integer.parseInt(request.getParameter("voto"));
 		double media = 0;
@@ -45,6 +39,7 @@ public class AddVotoServlet extends HttpServlet {
 		media = filmUtentiService.FindAvgVoto(idFilm);
 		film.setVoto((int) media);
 		filmService.update(film);
+		
 		request.setAttribute("film", film);
 		request.setAttribute("utente", utente);
 		request.getRequestDispatcher("schedaFilmDef.jsp").forward(request, response);

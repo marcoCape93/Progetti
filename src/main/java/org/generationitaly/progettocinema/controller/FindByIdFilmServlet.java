@@ -24,20 +24,20 @@ public class FindByIdFilmServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private FilmService filmService = new FilmServiceImpl();
-	private UtenteService utenteService=new UtenteServiceImpl();
+//	private UtenteService utenteService=new UtenteServiceImpl();
 	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
-		String tmp=request.getParameter("idUtente");
-		int idUtente=0;
-		if(!tmp.isBlank()) {
-			idUtente=Integer.parseInt(tmp);
-			Utente utente=utenteService.findById(idUtente);
-			request.setAttribute("utente", utente);
-		}
+//		String tmp=request.getParameter("idUtente");
+//		int idUtente=0;
+//		if(!tmp.isBlank()) {
+//			idUtente=Integer.parseInt(tmp);
+//			Utente utente=utenteService.findById(idUtente);
+//			request.setAttribute("utente", utente);
+//		}
 		Film film = filmService.findById(id);
 		request.setAttribute("film", film);
 		request.getRequestDispatcher("schedaFilmDef.jsp").forward(request, response);
