@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 
 <link rel="stylesheet" href="style-homepage.css">
+<link rel="stylesheet" href="styles-carousel.css">
 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
@@ -29,8 +30,10 @@
 	<br>
 
 	<div class="container-fluid">
-		
-		<br>
+	
+	<%@include file="./carousel.html" %>
+	
+	<br>
 
 			<div class="container text-center" id="products">
 				
