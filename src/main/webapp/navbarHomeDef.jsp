@@ -47,11 +47,20 @@
             </form>
           </li>
           <li class="nav-item">
+          	<c:if test="${empty utente}">
+        	<form action="login.jsp" method="post">
+          		<button type="submit" class="btn btn-outline-secondary" name="" style="border-color: white;">
+          		Login
+          		</button>
+          	</form>
+        	</c:if>
+          <c:if test="${not empty utente }">
           	<form action="logout" method="post">
           		<button type="submit" class="btn btn-outline-secondary" name="" style="border-color: white;">
           		Logout
           		</button>
           	</form>
+          	</c:if>
           </li>
         </ul>
         

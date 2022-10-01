@@ -29,11 +29,20 @@ public class AddVotoServlet extends HttpServlet {
 			throws ServletException, IOException {	
 		int idUtente=Integer.parseInt(request.getParameter("id-utente"));
 		int idFilm = Integer.parseInt(request.getParameter("id-film"));
-		int voto = Integer.parseInt(request.getParameter("voto"));
-		double media = 0;
 		Utente utente = utenteService.findById(idUtente);
-		FilmUtenti filmUtenti = filmUtentiService.FindByIdUtenteIdFilm(idUtente, idFilm);
 		Film film = filmService.findById(idFilm);
+		String vototest=request.getParameter("voto");
+		if(vototest==null) {
+			request.setAttribute("film", film);
+			request.setAttribute("utente", utente);
+			request.getRequestDispatcher("schedaFilmDef.jsp").forward(request, response);
+		}
+		int voto = Integer.parseInt(vototest);
+		
+		double media = 0;
+		
+		FilmUtenti filmUtenti = filmUtentiService.FindByIdUtenteIdFilm(idUtente, idFilm);
+		
 		filmUtenti.setVoto(voto);
 		filmUtentiService.update(filmUtenti);
 		media = filmUtentiService.FindAvgVoto(idFilm);
