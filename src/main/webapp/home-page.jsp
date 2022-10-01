@@ -21,8 +21,6 @@
 
 <script src="https://unpkg.com/htmlincludejs"></script>
 
-
-
 </head>
 <body style="background-color: white;">
 	<%@include file="./navbarHomeDef.jsp" %>
@@ -31,9 +29,7 @@
 	<br>
 
 	<div class="container-fluid">
-
-		<div class="carosello">Carosello Locandine</div>
-
+		
 		<br>
 
 			<div class="container text-center" id="products">
@@ -68,7 +64,7 @@
 
 		<div class="ricerca1">
 			<div class="row">
-				<div class="col-6">
+				<div class="col lg-6 sm-4">
 					<h5 id="ricerca-titolo">Film per anno:</h5>
 					<form action="RicercaServlet" method="get" class="d-flex"
 				role="search">
@@ -77,7 +73,7 @@
 				<button class="btn btn-outline-success" type="submit">Cerca</button>
 			</form>
 				</div>
-				<div class="col-6">
+				<div class="col lg-6 sm-4">
 					<h5 id="ricerca-titolo">Film per genere:</h5>
 					<form action="RicercaServlet" method="get" class="d-flex"
 				role="search">
@@ -93,7 +89,7 @@
 
 		<div class="ricerca2">
 			<div class="row">
-				<div class="col-6">
+				<div class="col lg-6 sm-4">
 					<h5 id="ricerca-titolo">Film per titolo:</h5>
 					<form action="RicercaServlet" method="get" class="d-flex"
 				role="search">
@@ -102,7 +98,7 @@
 				<button class="btn btn-outline-success" type="submit">Cerca</button>
 			</form>
 				</div>
-				<div class="col-6">
+				<div class="col lg-6 sm-4">
 					<h5 id="ricerca-titolo">Attori per cognome:</h5>
 					<form action="findCognome-attore" method="get" class="d-flex"
 					role="search">
@@ -114,6 +110,31 @@
 			</div>
 		</div>
 		</div>
+		<br><br>
+		
+		<div class="video-player">
+		<div class="row">
+			<div class="col lg-6 sm-4">
+			<h3 style="text-align: center">🎥 I TRAILER DELLA SETTIMANA 🎥</h3>
+			<br>
+			<div class="trailer" id="trailer">	
+			<center>
+			<iframe width="480" height="315" src="https://www.youtube.com/embed/videoseries?list=PLEpEp4fsUam9guJ5h8DNyb4ENX5A844d3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</center>
+				</div>
+			</div>
+			<div class="col lg-6 sm-4">
+			<h3 style="text-align: center">🎤 L'INTERVISTA DELLA SETTIMANA 🎤</h3>
+			<br>
+			<div class="interview" id="interview">	
+			<center>
+			<iframe width="480" height="315" src="https://www.youtube.com/embed/n_Otn2IXIPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>			</center>
+				</div>
+			</div>
+			</div>
+		</div>
+		</div>
+
 		<br><br>
 		
 			<div class="title-blog" style="background-color: white">
@@ -150,7 +171,7 @@
 					<div class="product"
 						style="background-image: url(https://i0.wp.com/www.badtaste.it/cinema/wp-content/uploads/sites/1/2022/05/top-gun-maverick-1.jpg?w=1200&quality=85&strip=all&ssl=1)">
 						<div class="productInfo">
-							<p class="productText" style="">Top Gun: Maverick, successo al cinema</p>
+							<p class="productText">Top Gun: Maverick, successo al cinema</p>
 						</div>
 					</div>
 				</a>

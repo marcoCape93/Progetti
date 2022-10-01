@@ -15,6 +15,7 @@ body {
 	padding: 225px 0;
 }
 
+@media (min-width:300px) {
 #rettangolo {
 	background-color: white; 
 	margin-left: 35px; 
@@ -22,6 +23,7 @@ body {
 	margin-bottom: 50px; 
 	width: 250px; 
 	position: center; 
+}
 }
 
 @media (min-width:900px) {
