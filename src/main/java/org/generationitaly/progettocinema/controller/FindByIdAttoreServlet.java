@@ -6,13 +6,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.generationitaly.progettocinema.entity.Attore;
-import org.generationitaly.progettocinema.entity.Utente;
 import org.generationitaly.progettocinema.service.AttoreService;
-import org.generationitaly.progettocinema.service.UtenteService;
 import org.generationitaly.progettocinema.service.impl.AttoreServiceImpl;
-import org.generationitaly.progettocinema.service.impl.UtenteServiceImpl;
 
 /**
  * Servlet implementation class FindByIdAttoreServlet
@@ -22,7 +20,7 @@ public class FindByIdAttoreServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private AttoreService attoreService = new AttoreServiceImpl();
-	private UtenteService utenteService = new UtenteServiceImpl();
+	
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -39,7 +37,8 @@ public class FindByIdAttoreServlet extends HttpServlet {
 //			request.setAttribute("utente", utente);
 //		}
 		Attore attore = attoreService.findById(id);
-		request.setAttribute("attore", attore);
+		HttpSession session=request.getSession();
+		session.setAttribute("attore", attore);
 		request.getRequestDispatcher("schedaAttoreDef.jsp").forward(request, response);
 	}
 

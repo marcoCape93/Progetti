@@ -46,6 +46,7 @@ public class LoginServlet extends HttpServlet {
 		Utente u = utenteService.findByUsername(username);
 			if(u != null && u.getPassword().equals(password)) { 
 				HttpSession session = request.getSession();
+				session.setAttribute("id-utente", u.getId());
 				session.setAttribute("utente", u);
 				response.sendRedirect("home-page.jsp");
 			}else{

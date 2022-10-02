@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.generationitaly.progettocinema.entity.Film;
 import org.generationitaly.progettocinema.service.FilmService;
@@ -27,7 +28,8 @@ public class FindAllServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Film> film = filmService.findAll();
-		request.setAttribute("film", film);
+		HttpSession session=request.getSession();
+		session.setAttribute("film", film);
 		request.getRequestDispatcher("AllFilm.jsp").forward(request, response);
 	}
 

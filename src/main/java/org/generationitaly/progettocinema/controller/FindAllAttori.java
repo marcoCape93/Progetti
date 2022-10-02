@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.generationitaly.progettocinema.entity.Attore;
 import org.generationitaly.progettocinema.service.AttoreService;
@@ -27,7 +28,8 @@ public class FindAllAttori extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Attore> listAttori = attoreService.orderAZ();
-		request.setAttribute("attori", listAttori);
+		HttpSession session=request.getSession();
+		session.setAttribute("attori", listAttori);
 		
 		request.getRequestDispatcher("AllAttori.jsp").forward(request, response);
 	}

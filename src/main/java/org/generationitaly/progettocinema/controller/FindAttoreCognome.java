@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.generationitaly.progettocinema.entity.Attore;
-import org.generationitaly.progettocinema.entity.Film;
 import org.generationitaly.progettocinema.service.AttoreService;
 import org.generationitaly.progettocinema.service.impl.AttoreServiceImpl;
 

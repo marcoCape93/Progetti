@@ -6,13 +6,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.generationitaly.progettocinema.entity.Film;
-import org.generationitaly.progettocinema.entity.Utente;
 import org.generationitaly.progettocinema.service.FilmService;
-import org.generationitaly.progettocinema.service.UtenteService;
 import org.generationitaly.progettocinema.service.impl.FilmServiceImpl;
-import org.generationitaly.progettocinema.service.impl.UtenteServiceImpl;
 
 
 
@@ -39,7 +37,9 @@ public class FindByIdFilmServlet extends HttpServlet {
 //			request.setAttribute("utente", utente);
 //		}
 		Film film = filmService.findById(id);
-		request.setAttribute("film", film);
+		HttpSession session=request.getSession();
+		session.setAttribute("id-film", id);
+		session.setAttribute("film", film);
 		request.getRequestDispatcher("schedaFilmDef.jsp").forward(request, response);
 
 		
