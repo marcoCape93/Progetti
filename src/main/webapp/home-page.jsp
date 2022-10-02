@@ -30,10 +30,6 @@
 	<br>
 
 	<div class="container-fluid">
-	
-	<%@include file="./carousel.html" %>
-	
-	<br>
 
 			<div class="container text-center" id="products">
 				
@@ -73,8 +69,9 @@
 				role="search">
 				<input name="anni" class="form-control me-2" type="text"
 					placeholder="Cerca..." aria-label="Cerca...">
-					
-				<button class="btn btn-outline-success" type="submit">Cerca</button>
+				<button class="btn btn-outline-success" type="submit">
+					<p style="margin-left: -6.5px; margin-top: -2px; margin-bottom: -6.5px">Cerca</p>
+				</button>
 			</form>
 				</div>
 				<div class="col lg-6 sm-4">
@@ -83,7 +80,9 @@
 				role="search">
 				<input name="generi" class="form-control me-2" type="text"
 					placeholder="Cerca..." aria-label="Cerca...">
-				<button class="btn btn-outline-success" type="submit">Cerca</button>
+				<button class="btn btn-outline-success" type="submit">
+				<p style="margin-left: -6.5px; margin-top: -2px; margin-bottom: -6.5px">Cerca</p>
+				</button>
 			</form>
 				</div>
 			</div>
@@ -99,8 +98,10 @@
 				role="search">
 				<input name="titoli" class="form-control me-2" type="text"
 					placeholder="Cerca..." aria-label="Cerca...">
-				<button class="btn btn-outline-success" type="submit">Cerca</button>
-			</form>
+					<button class="btn btn-outline-success" type="submit">
+					<p style="margin-left: -6.5px; margin-top: -2px; margin-bottom: -6.5px">Cerca</p>
+				</button>			
+				</form>
 				</div>
 				<div class="col lg-6 sm-4">
 					<h5 id="ricerca-titolo">Attori per cognome:</h5>
@@ -108,38 +109,20 @@
 					role="search">
 					<input name="cognome" class="form-control me-2" type="text"
 						placeholder="Cerca..." aria-label="Cerca...">
-					<button class="btn btn-outline-success" type="submit">Cerca</button>
+					<button class="btn btn-outline-success" type="submit">
+					<p style="margin-left: -6.5px; margin-top: -2px; margin-bottom: -6.5px">Cerca</p>
+				</button>
 				</form>
 				</div>
 			</div>
 		</div>
 		</div>
+	
 		<br><br>
 		
-		<div class="video-player">
-		<div class="row">
-			<div class="col lg-6 sm-4">
-			<h3 style="text-align: center">🎥 I TRAILER DELLA SETTIMANA 🎥</h3>
-			<br>
-			<div class="trailer" id="trailer">	
-			<center>
-			<iframe width="480" height="315" src="https://www.youtube.com/embed/videoseries?list=PLEpEp4fsUam9guJ5h8DNyb4ENX5A844d3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</center>
-				</div>
-			</div>
-			<div class="col lg-6 sm-4">
-			<h3 style="text-align: center">🎤 L'INTERVISTA DELLA SETTIMANA 🎤</h3>
-			<br>
-			<div class="interview" id="interview">	
-			<center>
-			<iframe width="480" height="315" src="https://www.youtube.com/embed/n_Otn2IXIPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>			</center>
-				</div>
-			</div>
-			</div>
-		</div>
-		</div>
-
-		<br><br>
+		<%@include file="./carousel.html" %>
+		
+		<br>
 		
 			<div class="title-blog" style="background-color: white">
 			<h3 style="text-align: center">🎬 LE NEWS DEL MOMENTO 🎬</h3>
@@ -180,14 +163,43 @@
 					</div>
 				</a>
 			</div>
-			
 						<br>
-			
 			</div>
-
 	</div>   
 	
-	<br><br><br>
+	<br><br>
+	
+	<div class="video-player">
+		<div class="row">
+			<div class="col lg-4 sm-4">
+			<h3 style="text-align: center">🎥 I TRAILER DELLA SETTIMANA 🎥</h3>
+			<br>
+			<div class="trailer" id="trailer">	
+			<center>
+			<iframe width="480" height="315" src="https://www.youtube.com/embed/videoseries?list=PLEpEp4fsUam9guJ5h8DNyb4ENX5A844d3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</center>
+				</div>
+			</div>
+			<div class="col lg-4 sm-4">
+			<h3 style="text-align: center">🎤 L'INTERVISTA DELLA SETTIMANA 🎤</h3>
+			<br>
+			<div class="interview" id="interview">	
+			<center>
+			<iframe width="480" height="315" src="https://www.youtube.com/embed/n_Otn2IXIPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>			</center>
+				</div>
+			</div>
+			<div class="col lg-4 sm-4">
+			<h3 style="text-align: center">🥇 TOP & FLOP DI SETTEMBRE '22 🥇</h3>
+			<br>
+			<div class="interview" id="interview">	
+			<center>
+			<iframe width="480" height="315" src="https://www.youtube.com/embed/Sxr2BrH-8fQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>				</div>
+			</div>
+			</div>
+		</div>
+		</div>
+	
+	<br><br>
 		
 	<include src="./footer.html"></include>
 
@@ -196,10 +208,7 @@
 		integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
 		crossorigin="anonymous"></script>
 		<script type="text/javascript">
-		
-		
-			
-		
+
 		</script>
 </body>
 </html>
