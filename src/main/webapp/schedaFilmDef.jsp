@@ -94,15 +94,15 @@
 										
 										<div class="rating" style="margin-right: 30px">
 											<input id="star5" name="voto" type="radio" value="5"
-												class="radio-btn hide" /> <label for="star5" style="font-size: 16px; color: white">&#9734;</label> <input
+												class="radio-btn hide" /> <label for="star5" style="font-size: 16px; color: black">&#9734;</label> <input
 												id="star4" name="voto" type="radio" value="4"
-												class="radio-btn hide" /> <label for="star4" style="font-size: 16px; color: white">&#9734;</label> <input
+												class="radio-btn hide" /> <label for="star4" style="font-size: 16px; color: black">&#9734;</label> <input
 												id="star3" name="voto" type="radio" value="3"
-												class="radio-btn hide" /> <label for="star3" style="font-size: 16px; color: white">&#9734;</label> <input
+												class="radio-btn hide" /> <label for="star3" style="font-size: 16px; color: black">&#9734;</label> <input
 												id="star2" name="voto" type="radio" value="2"
-												class="radio-btn hide" /> <label for="star2" style="font-size: 16px; color: white">&#9734;</label> <input
+												class="radio-btn hide" /> <label for="star2" style="font-size: 16px; color: black">&#9734;</label> <input
 												id="star1" name="voto" type="radio" value="1"
-												class="radio-btn hide" /> <label for="star1" style="font-size: 16px; color: white">&#9734;</label>
+												class="radio-btn hide" /> <label for="star1" style="font-size: 16px; color: black">&#9734;</label>
 											<div class="clear"></div>
 										</div>
 										
