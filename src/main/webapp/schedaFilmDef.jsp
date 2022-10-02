@@ -53,11 +53,11 @@
 								<label>Regista</label>
 								<c:out value="${film.regista}" />
 							</div>
-							<br>
 							<div class="set">
 								<label>Distribuzione</label>
 								<c:out value="${film.distribuzione}" />
 							</div>
+							<br>
 							<div class="set">
 								<label>Paese</label>
 								<c:out value="${film.paese}" />
@@ -66,18 +66,19 @@
 								<label>Anno</label>
 								<c:out value="${film.anno}" />
 							</div>
-							<br>
 							<div class="set">
 								<label>Durata</label>
 								<c:out value="${film.durata} minuti" />
 							</div>
 							<div class="set">
 								<label>Voto</label>
-								<c:out value="${film.voto}" />
+								<c:out value="${film.voto} stelle" />
 							</div>
 							<br>
+							
 							<div class="wrapper " style="background-color: #1E1D1D">
-								<h3 style="color: white">Vota il film</h3>
+							<br>
+								<h4 style="color: white">Vota il film</h4>
 								<div class="txt-center">
 									<form action="AddVoto" method="post">
 									<c:if test="${empty utente.id}">
@@ -87,22 +88,22 @@
 										<input type="hidden" name="id-utente" value="${utente.id}">
 										<input type="hidden" name="id-film" value="${film.id }">
 										
-										<div class="rating">
+										<div class="rating" style="margin-right: 30px">
 											<input id="star5" name="voto" type="radio" value="5"
-												class="radio-btn hide" /> <label for="star5">☆</label> <input
+												class="radio-btn hide" /> <label for="star5" style="font-size: 15px">☆</label> <input
 												id="star4" name="voto" type="radio" value="4"
-												class="radio-btn hide" /> <label for="star4">☆</label> <input
+												class="radio-btn hide" /> <label for="star4" style="font-size: 15px">☆</label> <input
 												id="star3" name="voto" type="radio" value="3"
-												class="radio-btn hide" /> <label for="star3">☆</label> <input
+												class="radio-btn hide" /> <label for="star3" style="font-size: 15px">☆</label> <input
 												id="star2" name="voto" type="radio" value="2"
-												class="radio-btn hide" /> <label for="star2">☆</label> <input
+												class="radio-btn hide" /> <label for="star2" style="font-size: 15px">☆</label> <input
 												id="star1" name="voto" type="radio" value="1"
-												class="radio-btn hide" /> <label for="star1">☆</label>
+												class="radio-btn hide" /> <label for="star1" style="font-size: 15px">☆</label>
 											<div class="clear"></div>
 										</div>
 										
 										
-										<button type="submit" >voto</button>
+										<button type="submit" style="padding: 10px; border-radius: 30px;">vota</button>
 										</c:if>
 									</form>
 								</div>
