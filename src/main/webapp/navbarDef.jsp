@@ -15,6 +15,7 @@
         		 <a href="registrationDef.jsp">Non sei registrato?</a>
         	</span>
         	</c:if>
+        	
         	<c:if test="${not empty utente }">
        		<span style="color: black;">
         	Ciao 
@@ -22,10 +23,20 @@
         	!
         	</span>
         	</c:if>
-				
-         </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        	</h5>
+        	<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>  
       </div>
+      
+      <div class="offcanvas-header" style="margin-top: -25px; margin-bottom: -25px;">
+      	 <c:if test="${not empty utente }">
+          	<form action="logout" method="post" style="display: inline-block">
+          		<button type="submit" class="btn btn-outline-dark" name="" style="border-color: white;">
+          		Logout
+          		</button>
+          	</form>
+          	</c:if>
+      </div>
+      
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
@@ -47,6 +58,7 @@
             </form>
           </li>
           <li class="nav-item">
+          <br>
           <c:if test="${empty utente}">
         	<form action="login.jsp" method="post">
           		<button type="submit" class="btn btn-outline-secondary" name="" style="border-color: white;">
@@ -54,16 +66,9 @@
           		</button>
           	</form>
         	</c:if>
-          <c:if test="${not empty utente }">
-          	<form action="logout" method="post">
-          		<button type="submit" class="btn btn-outline-secondary" name="" style="border-color: white;">
-          		Logout
-          		</button>
-          	</form>
-          	</c:if>
           </li>
         </ul>
-        <br>
+     
         <h5 id="ricerca-titolo">Ricerca film per anno:</h5>
 					<form action="FindByAnnoServlet" method="get" class="d-flex"
 				role="search">
