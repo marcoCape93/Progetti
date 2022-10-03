@@ -12,7 +12,7 @@
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
         	<c:if test="${empty utente}">
         	<span style="color: black;">
-        		 <a href="registrationDef.jsp">Non sei registrato?</a>
+        		 Non sei loggato?
         	</span>
         	</c:if>
         	
@@ -27,8 +27,24 @@
         	<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>  
       </div>
       
-      <div class="offcanvas-header" style="margin-top: -25px; margin-bottom: -25px;">
-      	 <c:if test="${not empty utente }">
+      <div class="offcanvas-header justify-content-start" style="margin-top: -25px; margin-bottom: -25px;">
+      	<c:if test="${empty utente }">
+        	<form action="registrationDef.jsp" method="post" style="display: inline-block">
+        		<button type="submit" class="btn btn-outline-danger" name="" style="border-color: white;">
+          		Registrati
+          		</button>
+        	</form>
+        	</c:if>
+        	
+          	<c:if test="${empty utente}">
+        	<form action="login.jsp" method="post" style="display: inline-block">
+          		<button type="submit" class="btn btn-outline-success" name="" style="border-color: white;">
+          		Login
+          		</button>
+          	</form>
+        	</c:if>
+        	
+      	 	<c:if test="${not empty utente }">
           	<form action="logout" method="post" style="display: inline-block">
           		<button type="submit" class="btn btn-outline-dark" name="" style="border-color: white;">
           		Logout
@@ -57,20 +73,10 @@
           	<button type="submit" class="btn btn-outline-secondary" style="border-color: white;">Lista Attori</button>
             </form>
           </li>
-          <li class="nav-item">
-          <br>
-          <c:if test="${empty utente}">
-        	<form action="login.jsp" method="post">
-          		<button type="submit" class="btn btn-outline-secondary" name="" style="border-color: white;">
-          		Login
-          		</button>
-          	</form>
-        	</c:if>
-          </li>
         </ul>
-     
+     	<br>
         <h5 id="ricerca-titolo">Ricerca film per anno:</h5>
-					<form action="FindByAnnoServlet" method="get" class="d-flex"
+			<form action="FindByAnnoServlet" method="get" class="d-flex"
 				role="search">
 				<input name="anni" class="form-control me-2" type="text"
 					placeholder="Cerca..." aria-label="Cerca...">
