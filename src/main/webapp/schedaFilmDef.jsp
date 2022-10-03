@@ -141,17 +141,18 @@
 										<figure class="figure">
 											<input type="hidden" name="id" value="${a.attore.id }">
 											<input type="hidden" name="idUtente" value="${utente.id }">
-											<div class="fotoprova" style="margin-bottom: -20px;">
+											<div class="fotocast" style="margin-bottom: -20px;">
 												<input type="image" src="${a.attore.foto}"
 													value="${a.attore.id }" name="id"
 													alt="Locandina per ${a.attore.cognome}"
 													class="figure-img img-fluid rounded">
 											</div>
-											
-											<figcaption class="figure-caption text-center">
+											<div>
+											<figcaption class="figure-caption">
 												<c:out value="${a.attore.nome}" />
 												<c:out value="${a.attore.cognome}" />
 											</figcaption>
+											</div>
 										</figure>
 									</form>
 								</c:forEach>

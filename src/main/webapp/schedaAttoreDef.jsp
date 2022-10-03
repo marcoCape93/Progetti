@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pagina Attore</title>
-<link rel="stylesheet" href="styles-film.css">
+<link rel="stylesheet" href="styles-filmDef.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -58,18 +58,23 @@
 						<div class="movie-cast">
 							<br>
 							<div class="header">Filmografia</div>
+							
 							<div class="list" style="margin-top: -20px">
 								<c:forEach items="${attore.filmografia}" var="f">
 								<form action="findById-film" method="get">
 									<figure class="figure foto">
 										<input type="hidden" name="id" value="${f.film.id }">
 										<input type="hidden" name="idUtente" value="${utente.id }">
+										<div>
 										<div class="fotofilm">
 												<input type="image" src="${f.film.locandina}" value="${f.film.id }" name="id" 
 												alt="Locandina per ${f.film.locandina}" class="figure-img img-fluid rounded">
 										</div>
-										<figcaption class="figure-caption text-center"><c:out value="${f.film.titolo}" />
+										<div class="didascalia">
+										<figcaption class="figure-caption"><c:out value="${f.film.titolo}" />
 											<c:out value="${f.film.anno}" /></figcaption>
+										</div>
+										</div>
 									</figure>
 									</form>
 								</c:forEach>
