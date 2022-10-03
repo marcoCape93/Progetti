@@ -34,16 +34,16 @@ public class RegistrationServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		boolean hasErrors = false;
-//		Utente u = utenteService.findByUsername(username);
-
-//		if(u.getUsername().equals(username)) {
-//			request.setAttribute("errUser2", "Già in uso");
-//			hasErrors = true;
-//		}
-//		if(u.getEmail().equals(mail)) {
-//			request.setAttribute("errGmail2", "Già in uso");
-//			hasErrors = true;
-//		}
+		Utente u = utenteService.findByUsername(username);
+		
+		if(u.getUsername().equals(username)) {
+			request.setAttribute("errUser2", "Già in uso");
+			hasErrors = true;
+		}
+		if(u.getEmail().equals(mail)) {
+			request.setAttribute("errGmail2", "Già in uso");
+			hasErrors = true;
+		}
 
 		if (mail.isBlank()) {
 			request.setAttribute("errMail", "Campo obbligatori");
@@ -66,7 +66,7 @@ public class RegistrationServlet extends HttpServlet {
 			hasErrors = true;
 		}
 		if (hasErrors) {
-			request.getRequestDispatcher("registration.jsp").forward(request, response);
+			request.getRequestDispatcher("registrationDef.jsp").forward(request, response);
 			return;
 		}	
 		Utente utente = new Utente();
@@ -79,7 +79,7 @@ public class RegistrationServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		request.setAttribute("s", "Seleziona..");
 		session.setAttribute("username", username);
-		response.sendRedirect("tuttiFilm");
+		response.sendRedirect("login.jsp");
 	}
 
 }

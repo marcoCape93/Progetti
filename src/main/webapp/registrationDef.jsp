@@ -23,7 +23,7 @@
 		<div class="row align-items-center">
 			<div class="col align-self-center"></div>
 			<div class="col align-self-center" id="login">
-			<div class=rettangolo" id="rettangolo">
+			<div class="rettangolo" id="rettangolo">
 				<form action="RegistrationServlet" method="post">
 					<br>
 					<label for="mail" class="">Email</label> 
@@ -33,7 +33,9 @@
 						<span class=""> <c:out value="${errMail}" />
 						</span>
 					</c:if>
-					<br>
+					<div>
+					<span id="closeSpan" style="color:red "><c:out value="${errGmail2}"/></span>
+					</div>
 					<label for="nome" class="">Nome</label> 
 					<br>
 					<input class="" type="text" name="nome" required>
@@ -42,6 +44,7 @@
 						</span>
 					</c:if>
 					<br>
+					
 					<label for="cognome" class="">Cognome</label> 
 					<br>
 					<input class="" type="text" name="cognome" required>
@@ -50,14 +53,17 @@
 						</span>
 					</c:if>
 					<br>
+					
 					<label for="username" class="">Username</label> 
 					<br>
-					<input class="" type="text" name="username" required>
+					<input class="" type="text" name="username" >
 					<c:if test="${errUser != null}">
 						<span class=""> <c:out value="${errUser}" />
 						</span>
 					</c:if>
-					<br>
+					<div>
+					<span  id="closeSpan2" style="color: red"><c:out value="${errUser2}"/></span>
+					</div>
 					<label for="password" class="">Password</label> 
 					<br>
 					<input class="" type="password" name="password" required>
@@ -73,11 +79,19 @@
 			</div>
 			<div class="col align-self-center"></div>
 		</div>
-
+	</div>
 
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
 			crossorigin="anonymous"></script>
+			<script type="text/javascript">
+		setTimeout(function(){
+			var x = document.getElementById("closeSpan");
+			x.parentNode.removeChild(x);
+	        var y = document.getElementById("closeSpan2");
+			y.parentNode.removeChild(y);
+		},3000);
+	</script>
 </body>
 </html>

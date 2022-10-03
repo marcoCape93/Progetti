@@ -16,6 +16,11 @@
 	</head>
 	
 	<body style="background-color: #1E1D1D">
+	<c:if test="${error2==true }">
+	<script type="text/javascript">
+	alert("Attore non in elenco")
+	</script>
+	</c:if>
 	<%@include file="./navbarDef.jsp" %>
 	<div class="container-fluid">
 

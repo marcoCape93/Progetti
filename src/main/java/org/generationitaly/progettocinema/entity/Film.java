@@ -46,12 +46,25 @@ public class Film {
 	@Column(name = "descrizione", length = 2000, nullable = false)
 	private String descrizione;
 	
-	@Column(name = "locandina", length = 2000, nullable = false)
+	@Column(name = "locandina", length = 4000, nullable = false)
 	private String locandina;
 	
 	@Column(name = "voto")
 	private int voto;
 	
+	@Column(name = "trailer", length = 4000, nullable = false)
+	private String trailer;
+	
+	public String getTrailer() {
+		return trailer;
+	}
+
+	public void setTrailer(String trailer) {
+		this.trailer = trailer;
+	}
+
+
+
 	@OneToMany(mappedBy = "film", fetch = FetchType.EAGER)
 	private List<FilmAttori> cast;
 	

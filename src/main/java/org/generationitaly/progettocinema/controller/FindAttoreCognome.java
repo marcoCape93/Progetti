@@ -27,12 +27,18 @@ public class FindAttoreCognome extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String cognome=request.getParameter("cognome");
+		boolean error2=false;
 		if( cognome.isBlank()) {
 			List<Attore> attore = attoreService.findAll();
 			request.setAttribute("attori", attore);
 			request.getRequestDispatcher("AllAttori.jsp").forward(request, response);
 		}else if (cognome != null) { 
 			List<Attore> attore = attoreService.findByCognome(cognome);
+			if(attore.isEmpty()) {
+				error2=true;
+				attore=attoreService.findAll();
+				request.setAttribute("error2", error2);
+			}
 			request.setAttribute("attori", attore);
 			request.getRequestDispatcher("AllAttori.jsp").forward(request, response);
 	

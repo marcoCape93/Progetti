@@ -34,6 +34,9 @@
 					<span class=""> <c:out value="${errUser}" />
 					</span>
 				</c:if>
+				<div>
+					<span id="closeSpan" style="color:red "><c:out value="${errUser2}"/></span>
+					</div>
 				<br>
 				<label for="password" class="">Password</label> 
 				<br>
@@ -42,6 +45,9 @@
 					<span class=""> <c:out value="${errPass}" />
 					</span>
 				</c:if>
+				<div>
+					<span id="closeSpan2" style="color:red "><c:out value="${errPassword}"/></span>
+					</div>
 				<br><br>
 				
 				
@@ -70,6 +76,13 @@
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
 			crossorigin="anonymous"></script>
-			
+			<script type="text/javascript">
+		setTimeout(function(){
+			var x = document.getElementById("closeSpan");
+			x.parentNode.removeChild(x);
+	        var y = document.getElementById("closeSpan2");
+			y.parentNode.removeChild(y);
+		},3000);
+	</script>
 </body>
 </html>

@@ -30,6 +30,7 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		boolean hasErrors = false;
+		
 		if (username.isBlank()) {
 			request.setAttribute("errUser", "Username errato");
 			hasErrors = true;
@@ -44,6 +45,13 @@ public class LoginServlet extends HttpServlet {
 		}
 		
 		Utente u = utenteService.findByUsername(username);
+		if(u==null) {
+			request.setAttribute("errUser2", "Username errato");
+			request.getRequestDispatcher("login.jsp").forward(request, response);
+		}else if(u != null && !u.getPassword().equals(password)) { 
+			request.setAttribute("errPassword", "Password errata");
+			request.getRequestDispatcher("login.jsp").forward(request, response);
+		}else
 			if(u != null && u.getPassword().equals(password)) { 
 				HttpSession session = request.getSession();
 				session.setAttribute("id-utente", u.getId());

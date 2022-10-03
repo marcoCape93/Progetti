@@ -24,12 +24,20 @@ public class FindByGenereServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String genere = request.getParameter("generi");
+		boolean error2=false;
 		if( genere.isBlank()) {
 			List<Film> film = filmService.findAll();
 			request.setAttribute("film", film);
 			request.getRequestDispatcher("AllFilm.jsp").forward(request, response);
 		}else if (genere != null) { 
 			List<Film> film = filmService.findByGenere(genere);
+			if (film.isEmpty()) {
+				error2=true;
+				film = filmService.findAll();
+				request.setAttribute("film", film);
+				request.setAttribute("error2", error2);
+				request.getRequestDispatcher("AllFilm.jsp").forward(request, response);
+			}
 			request.setAttribute("film", film);
 			request.getRequestDispatcher("AllFilm.jsp").forward(request, response);
 
