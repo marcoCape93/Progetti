@@ -52,6 +52,7 @@
 										<input type="image" src="${f.locandina}" value="${f.id}"
 											name="id" alt="Locandina per ${f.titolo}">
 									</div>
+									<br><br>
 								</form>
 							</td>
 							<td><c:out value="${f.titolo}" /></td>
