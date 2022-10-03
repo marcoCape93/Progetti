@@ -74,6 +74,7 @@
 					<br><br>
 					<button class="button1" type="submit">Registrati</button>
 				</form>
+				<a href="login.jsp"><button class="button2 btn btn-sm">Indietro</button></a>
 				<br>
 				</div>
 			</div>
