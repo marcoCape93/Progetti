@@ -9,13 +9,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pagina Film</title>
-<link rel="stylesheet" href="styles-film.css">
+
+<link rel="stylesheet" href="styles-filmDef.css">
 <link rel="stylesheet" href="rating.css">
+
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
 	crossorigin="anonymous" />
+
+
 
 <link href='https://fonts.googleapis.com/css?family=Questrial'
 	rel='stylesheet'>
@@ -32,12 +36,17 @@
 	<!-- commento -->
 	<div class="background-image">
 		<div class="container-fluid">
-			<div class="row">
+				<div class="row">
 				<div class="col lg-4">
 					<div class="poster" style="margin-left: -12px">
 						<img alt="Locandina per ${film.titolo}" src="${film.locandina}">
 					</div>
+				<!-- <form action="tuttiFilm" method="get">
+          			<input type="hidden" name="film">
+          			<button type="submit" class="btn btn-outline-secondary" style="border-color: white;">Indietro</button>
+            	</form> -->			
 				</div>
+				
 				<div class="col lg-8" id="info-film">
 					<div class="info" style="margin-top: -40px">
 						<div class="movie-title">
@@ -129,15 +138,16 @@
 							<div class="list" style="margin-top: -20px;">
 								<c:forEach items="${film.cast}" var="a">
 									<form action="findById-attore" method="get">
-										<figure class="figure foto">
+										<figure class="figure">
 											<input type="hidden" name="id" value="${a.attore.id }">
 											<input type="hidden" name="idUtente" value="${utente.id }">
-											<div class="fotoprova">
+											<div class="fotoprova" style="margin-bottom: -20px;">
 												<input type="image" src="${a.attore.foto}"
 													value="${a.attore.id }" name="id"
 													alt="Locandina per ${a.attore.cognome}"
 													class="figure-img img-fluid rounded">
 											</div>
+											
 											<figcaption class="figure-caption text-center">
 												<c:out value="${a.attore.nome}" />
 												<c:out value="${a.attore.cognome}" />
@@ -147,12 +157,16 @@
 								</c:forEach>
 							</div>
 						</div>
-						<iframe width="560" height="315" src="${film.trailer}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						
 						
 						
-					</div>
+	</div>
 				</div>
+			</div>
+			<div class="row">
+			<div class="d-flex justify-content-center" style="display: flex; justify-content: center;">
+				<iframe width="1120" height="630" src="${film.trailer}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
 			</div>
 		</div>
 	</div>

@@ -1,0 +1,138 @@
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+	font-family: 'Questrial';
+    transition: all 0.35s linear; 
+}
+
+div {
+    display:inline-block;
+    padding:0px;
+    margin-left: 0px;
+  }
+  
+  
+
+/* Locandina */ 
+
+.poster {
+    width: 820px;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: 60px;
+}
+
+.poster img {
+    width: 820px;
+    height: 100vh;
+    object-fit: cover;
+    overflow: hidden;
+    transition: all 1.5s ease-in-out;
+}
+
+.poster img:hover {
+    transform: scale(1.35) rotateZ(5deg);
+}
+
+/* Titolo + dettagli film */ 
+
+.movie-title {
+    font-size: 32px;
+    font-weight: bolder;
+    color: white;
+}
+
+.movie-detail .set {
+    display: inline-block;
+    margin-right: 40px;
+    margin-top: 10px; 
+    color: white;
+}
+
+.movie-detail label {
+    font-size: 11px;
+    color: white;
+    display: block; 
+    font-weight: bold;
+}
+
+.movie-detail span {
+    font-size: 17px;
+    color: white;
+}
+
+.movie-description {
+    line-height: 24px; 
+    margin-right: 24px; 
+    color: white;
+}
+
+/* Movie Cast */
+
+.movie-cast .header {
+    font-size: 24px;
+    margin-bottom: 48px; 
+    color: white;
+}
+
+.movie-cast .list img {
+	width: 80px;
+    height: 130px; 
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid #cccccc;
+}
+
+.movie-cast .set {
+	font-size: 14px; 
+}
+
+.list .attori {
+	color: white; 
+	font-size: 12px; 
+}
+
+/* Mobile */
+#info-film {
+    padding: auto;
+}
+
+/* Tablet */
+@media (min-width:600px) {
+    #info-film {
+        padding: 100px;
+    }
+}
+
+/* Desktop */
+@media (min-width:900px) {
+    #info-film {
+        padding-right: 200px; 
+    }
+}
+
+.list {
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.fotoprova{
+
+    width: 80px;
+    height: 130px;
+    margin-right: 20px;
+}
+
+
+#info-film {
+	margin-top: 40px; 
+}
+
+.trailer {
+    display: flex;
+    justify-content: center;
+}
