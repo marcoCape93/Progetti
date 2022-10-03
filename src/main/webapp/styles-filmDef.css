@@ -123,15 +123,15 @@ div {
 .fotocast{
 
     width: 160px;
-    height: 260px;
-    margin-right: 20px;
+    height: auto;
+
 }
 
 .fotofilm{
 
     width: 160px;
     height: 260px;
-    margin-right: 20px;
+
 }
 
 
@@ -144,7 +144,30 @@ div {
     justify-content: center;
 }
 
-.didascalia {
-	font-size: 18px !important;
+.figure{
+	display: flex !important;
+	flex-direction: column ;
+	margin: 10px;
+}
+
+.figure-caption-attore{
 	text-align: center;
+}
+
+.fototutto{
+	display: flex;
+	flex-direction: column;
+	max-width: 150px;
+}
+
+.film-locandina{
+	height:100% !important;
+}
+
+.figure-caption-film{
+	text-align: center;
+}
+
+.col{
+	margin-bottom: -80px !important;
 }

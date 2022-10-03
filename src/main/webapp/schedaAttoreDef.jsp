@@ -65,13 +65,13 @@
 									<figure class="figure foto">
 										<input type="hidden" name="id" value="${f.film.id }">
 										<input type="hidden" name="idUtente" value="${utente.id }">
-										<div>
+										<div class="fototutto">
 										<div class="fotofilm">
 												<input type="image" src="${f.film.locandina}" value="${f.film.id }" name="id" 
-												alt="Locandina per ${f.film.locandina}" class="figure-img img-fluid rounded">
+												alt="Locandina per ${f.film.locandina}" class="figure-img img-fluid rounded film-locandina">
 										</div>
-										<div class="didascalia">
-										<figcaption class="figure-caption"><c:out value="${f.film.titolo}" />
+										<div>
+										<figcaption class="figure-caption-film"><c:out value="${f.film.titolo}" />
 											<c:out value="${f.film.anno}" /></figcaption>
 										</div>
 										</div>

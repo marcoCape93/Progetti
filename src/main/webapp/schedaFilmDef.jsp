@@ -141,14 +141,14 @@
 										<figure class="figure">
 											<input type="hidden" name="id" value="${a.attore.id }">
 											<input type="hidden" name="idUtente" value="${utente.id }">
-											<div class="fotocast" style="margin-bottom: -20px;">
+											<div class="fotocast">
 												<input type="image" src="${a.attore.foto}"
 													value="${a.attore.id }" name="id"
 													alt="Locandina per ${a.attore.cognome}"
-													class="figure-img img-fluid rounded">
+													class="figure-img img-fluid rounded attore-foto">
 											</div>
 											<div>
-											<figcaption class="figure-caption">
+											<figcaption class="figure-caption-attore">
 												<c:out value="${a.attore.nome}" />
 												<c:out value="${a.attore.cognome}" />
 											</figcaption>
