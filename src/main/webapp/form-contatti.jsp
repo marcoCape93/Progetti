@@ -16,6 +16,7 @@
 
 </head>
 <body>
+
 	<div class="container container-add">
         
 
@@ -32,9 +33,6 @@
             <div class = "container">
             	
             	<form id="contact-form" role="form">
-
-            
-
             <div class="controls">
 
                 <div class="row">
@@ -100,8 +98,18 @@
 
         </div>
          </form>
+        
         </div>
-            </div>
+        <br>
+         <div class="position-relative">
+         <div class="position-absolute top-50 start-50 translate-middle">
+         <a class="btn btn-light" href="javascript:history.go(-1)" onMouseOver="self.status=document.referrer;return true">
+         Indietro </a>
+         </div>
+         </div>
+         
+         </div>
+         
 
 
     </div>
