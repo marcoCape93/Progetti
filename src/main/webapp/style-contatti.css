@@ -1,5 +1,8 @@
+*{
+	font-family: 'Questrial';
+}
+
 body {
-    font-family: 'Lato', sans-serif;
 	background:
 		url("https://static.open.online/wp-content/uploads/2022/09/cinema.jpg")
 		no-repeat center center fixed;
@@ -33,4 +36,14 @@ label {
 .card{
 	margin-left: 10px;
 	margin-right: 10px;
+}
+
+.container-add {
+	display: flex;
+    flex-direction: column;
+}
+
+.row-add {
+	margin-top: 12% !important;
+    margin-bottom: 12% !important;
 }

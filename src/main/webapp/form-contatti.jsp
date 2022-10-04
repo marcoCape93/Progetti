@@ -6,7 +6,8 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link href="style-contatti.css" rel="stylesheet">
-
+<link href='https://fonts.googleapis.com/css?family=Questrial'
+	rel='stylesheet'>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -15,11 +16,11 @@
 
 </head>
 <body>
-	<div class="container">
+	<div class="container container-add">
         
 
     
-    <div class="row">
+    <div class="row row-add">
       <div class="col-lg-7 mx-auto">
       	
         <div class="card mt-2 mx-auto p-4 bg-light">
