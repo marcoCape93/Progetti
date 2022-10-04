@@ -78,6 +78,12 @@
           	<button type="submit" class="btn btn-outline-secondary" style="border-color: white;">Lista Attori</button>
             </form>
           </li>
+            <li class="nav-item">
+          	<form action="form-contatti.jsp" method="get">
+          		<input type="hidden">
+          		<button type="submit" class="btn btn-outline-secondary" style="border-color: white;">Contattaci</button>
+          	</form>
+          </li>
         </ul>
      	<br>
         <h5 id="ricerca-titolo">Ricerca film per anno:</h5>
