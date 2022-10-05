@@ -2,7 +2,7 @@ package org.generationitaly.progettocinema.service.impl;
 
 import java.util.List;
 
-import org.generationitaly.progettocinema.entity.Film;
+
 import org.generationitaly.progettocinema.entity.Utente;
 import org.generationitaly.progettocinema.repository.UtenteRepository;
 import org.generationitaly.progettocinema.repository.impl.UtenteRepositoryImpl;
